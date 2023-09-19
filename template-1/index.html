@@ -34,6 +34,7 @@
 
       .main-title{
         font-size: 50pt;
+        
       }
 
       .date-title{
@@ -61,21 +62,24 @@
         object-fit: cover;
         position: absolute;
         animation: imagetrans 2s ease-in-out;
+        filter: brightness(0.6);
       }
 
       .container-opening-card {
         position: absolute;
         width: 100%;
-        top: 100px;
-        animation: bottomToLe;
+        top: 35vh;
+        z-index: 100;
       }
 
       .title-container {
         color: white;
+        z-index: 100;
       }
 
       #open-invitation {
         color: white;
+        z-index: 100;
       }
 
       .container-content-main {
@@ -96,6 +100,12 @@
         color: white;
         padding: 10px;
         border-radius: 10px;
+        transition: 1s;
+      }
+
+      .btn-instagram:hover{
+        color: white;
+        padding: 12px;
       }
 
       .btn-primary {
@@ -108,6 +118,10 @@
         color: rgb(0, 79, 19);
       }
 
+      .btn-primary:hover{
+        background-color: rgb(13, 103, 30);
+        border: 2px solid rgba(0, 79, 18, 0.461);
+      }
       .pp{
         width: 100%;
       }
@@ -178,7 +192,9 @@
       margin-top: 50px;
      }
      .clouds {
+        bottom: -100px;
         left: -400px;
+        z-index: 10;
       }
 
      .time-card {
@@ -223,20 +239,107 @@
           filter: brightness(0) blur(2px);
         }
         100% {
-          filter: brightness(1) blur(0px);
+          filter: brightness(0.6) blur(0px);
         }
         
       }
 
+      @keyframes floating{
+         0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .container-couple{
+        animation: rotateImage 2s ease-in-out
+      } 
+
+      .ornament-flower{
+        width: 200px;
+        position: absolute;
+        left: -40px;
+        bottom: -50px;
+        animation: floating 5s infinite;
+      }
+
+      .ornament-flower-2{
+        position: absolute;
+        width: 300px;
+        z-index: 11;
+        left: -100px;
+        bottom: -50px;
+        animation: floating2 10s linear alternate-reverse infinite;
+      }
+
+      .ornament-cover-bottom{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        overflow: clip;
+      }
+
+      img{
+        overflow-clip-margin: content-box;
+        overflow: clip;
+
+      }
+
+
+      @keyframes floating2{
+        0%,100%{
+          transform: translate(0px ,0px) scale(1);
+          
+        }
+        30%{
+          transform: translate(10px,10px) scale(1.05);
+        }
+        30%{
+          transform: translate(-20px,-10px) scale(1.1);
+        }
+        70%{
+          transform: translate(-10px,20px);
+        }
+      }
+
+      .protocol-card{
+        background-color: rgb(0, 59, 43);
+        margin: 10px;
+        padding: 10px 30px;
+        color: white;
+        border-radius: 20px;
+        display: block;
+        height: 200px;
+      }
+
+      .protocol-card img{
+        mix-blend-mode: screen;
+        width: 50px;
+        margin: 10px;
+        margin-top: 50%;
+      }
+
+      @keyframes imageAnim{0%{transform:rotateY(20deg) rotateX(35deg) translate(300px,-300px) skew(-35deg,10deg);opacity:0}100%{transform:rotateY(0) rotateX(0deg) translate(0,0) skew(0deg,0deg);opacity:1}}
+
+      .image-gallery-trans{
+        animation:imageAnim .6s cubic-bezier(.25,.46,.45,.94) both;
+      }
 
     </style>
   </head>
   <body>
     <img src="img/vinyl.png" alt="" id="disk-player" onclick="toggleMusic()">
-    <audio controls autoplay class="d-none" id="music-audio">
+    <!-- <audio controls autoplay class="d-none" id="music-audio">
       <source src="music/music-1.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
-    </audio>
+    </audio> -->
     <div class="row">
       <div class="col-md-7 p-0" style="height: 100vh">
         <div class="position-relative">
@@ -247,38 +350,45 @@
               <h4 class="text-center date-title">Minggu, 25 Januari 2023</h4>
               <a href="#content-main" id="open-invitation">Open Invitation</a>
             </div>
+                    
+            
           </div>
-                  
-        <img
-        src="img/img8.png"
-        alt=""
-        style="mix-blend-mode: screen; bottom: 10px"
-        class="position-absolute clouds"
-        width="1000px"
-      />
-      <img
-        src="img/img8.png"
-        alt=""
-        style="mix-blend-mode: screen; bottom: 10px"
-        class="position-absolute clouds"
-        width="200px"
-      />
-
-      <img
-        src="img/img8.png"
-        alt=""
-        style="mix-blend-mode: screen; bottom: 10px"
-        class="position-absolute clouds-right"
-        width="500px"
-      />
-      <img
-        src="img/img8.png"
-        alt=""
-        style="mix-blend-mode: screen; bottom: 10px"
-        class="position-absolute clouds-right"
-        width="200px"
-      />
+          <div class=" ornament-cover-bottom" >
+            <img
+            src="img/img8.png"
+            alt=""
+            style="mix-blend-mode: screen;"
+            class="position-absolute clouds"
+            width="1000px"
+          />
+          <img
+            src="img/img8.png"
+            alt=""
+            style="mix-blend-mode: screen;"
+            class="position-absolute clouds"
+            width="200px"
+          />
+    
+          <img
+            src="img/img8.png"
+            alt=""
+            style="mix-blend-mode: screen;"
+            class="position-absolute clouds"
+            width="500px"
+          />
+          <img
+            src="img/img8.png"
+            alt=""
+            style="mix-blend-mode: screen;"
+            class="position-absolute clouds"
+            width="200px"
+          />
+          <img src="img/flower4.png" alt="" class="ornament-flower-2">
+          <img src="img/flower4.png" alt="" class="ornament-flower-2" style="left: unset;right: -100px;transform: scale(-1);">
+          </div>
+            
         </div>
+       
       </div>
       <div class="col-md-5 p-0" id="content-main">
         <div class="container-content position-relative">
@@ -322,12 +432,16 @@
                 <div class="container mt-4 p-5" style="border-radius: 10px">
                   <div class="row">
                     <div class="col-12 text-center fade-in">
-                      <img
+                      <div class="container-couple position-relative" style="margin-bottom: 50px;">
+                        <img
                         src="img/img3.jpg"
                         alt=""
                         class="img3 mx-auto mb-3 couple-img"
-                      />
-                      <img src="img/flower1.png" alt="" style="position: absolute">
+                        />
+                        <img src="img/flower1.png" alt="" class="ornament-flower" >
+                        <img src="img/flower1.png" alt="" class="ornament-flower" style="right: -40px !important; left: unset;" >
+                      </div>
+
                       <h4>Roby Simanjutak</h4>
                       <p>Putra dari bapak Romeo Simanjuntak</p>
                       <a href="" class="btn-instagram">Instagram</a>
@@ -346,11 +460,15 @@
                 <div class="container p-5 mt-2">
                   <div class="row">
                     <div class="col-12 text-center fade-in">
-                      <img
+                      <div class="container-couple position-relative" style="margin-bottom: 50px;">
+                        <img
                         src="img/img4.jpg"
                         alt=""
                         class="img3 mx-auto mb-3 couple-img"
-                      />
+                        />
+                        <img src="img/flower1.png" alt="" class="ornament-flower" >
+                        <img src="img/flower1.png" alt="" class="ornament-flower" style="right: -40px !important; left: unset;" >
+                      </div>
                       <h4>Herdika Sembiring</h4>
                       <p>Putri dari bapak Arman Sembiring</p>
                       <a href="" class="btn-instagram">Instagram</a>
@@ -539,7 +657,7 @@
                         <h3>Gallery</h3>
                         <div class="container-fluid mt-5">
                           <!-- Gallery -->
-                          <div class="row">
+                          <div class="row gallery-container">
                             <div class="col-lg-4 col-md-12 mb-2 mb-lg-0">
                               <img
                                 src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
@@ -601,6 +719,45 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen
                           ></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="container mt-5">
+                    <div class="row">
+                      <div class="col-12 text-center fade-in">
+                        <h3>Protokol Kesehatan</h3>
+                        <div class="container">
+                          <div class="row">
+                            <div class="col">
+                              <div class="protocol-card">
+                                <img src="img/distance.png" alt="">
+                               <h6 class="mt-2">Jaga Jarak</h6>
+                              </div>
+                            </div>
+                            <div class="col">
+             
+                                <div class="protocol-card">
+                                  <img src="img/mask.png" alt="">
+                                 <h6 class="mt-2">Memakai Masker</h6>
+                                </div>
+                             
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                              <div class="protocol-card">
+                                <img src="img/mask.png" alt="">
+                               <h6 class="mt-2">Memamaki Hand Sanitizer</h6>
+                              </div>
+                            </div>
+                            <div class="col">
+                               <div class="protocol-card">
+                                  <img src="img/mask.png" alt="">
+                                 <h6 class="mt-2">Cek temperatur</h6>
+                                </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -718,7 +875,7 @@
             }
 
             //image animation
-            var elem = document.querySelectorAll(".couple-img");
+            var elem = document.querySelectorAll(".container-couple");
             for (let i = 0; i < elem.length; i++) {
                
                 let element = elem[i];
@@ -729,7 +886,25 @@
                 element.classList.remove(className);
                 }
             }
+
+            var elem2 = document.querySelectorAll(".gallery-container .col-lg-4 img, .protocol-card");
+            for (let i = 0; i < elem2.length; i++) {
+                
+                let element = elem2[i];
+                let className = "image-gallery-trans"
+                if (isElementInViewport(element)) {
+                element.classList.add(className);
+                } else {
+                element.classList.remove(className);
+                }
             }
+            
+            }
+
+            //image-galery
+              //image animation
+             
+            
             
             
             // Memanggil fungsi toggleAnimation() saat halaman di-scroll
@@ -739,30 +914,30 @@
             toggleAnimation();
 
              //audio
-            let toggleButton = document.getElementById("disk-player");
-            let audio = document.getElementById("music-audio");
+            // let toggleButton = document.getElementById("disk-player");
+            // let audio = document.getElementById("music-audio");
 
-            function toggleMusic() {
-              if (audio.paused) {
-                audio.play();
-                toggleButton.classList.add("spining");
-              } else {
-                audio.pause();
-                toggleButton.classList.remove("spining");
-              }
-            }
+            // function toggleMusic() {
+            //   if (audio.paused) {
+            //     audio.play();
+            //     toggleButton.classList.add("spining");
+            //   } else {
+            //     audio.pause();
+            //     toggleButton.classList.remove("spining");
+            //   }
+            // }
 
             const clouds = document.getElementsByClassName("clouds");
-    console.log(clouds.length);
+            console.log(clouds.length);
 
-    for (let i = 0; i < clouds.length; i++) {
-      gsap.to(clouds[i], {
-        duration: 1, // Durasi animasi dalam detik
-        opacity: 1, // Mengubah opacity menjadi 1 (fade-in)
-        scale: 1, // Mengubah scale menjadi 1 (tidak ada zoom)
-        ease: "power2.inOut", // Efek animasi
-        x: 200 * (i + 1),
-      });
+            for (let i = 0; i < clouds.length; i++) {
+              gsap.to(clouds[i], {
+                duration: 3, // Durasi animasi dalam detik
+                opacity: 0.8, // Mengubah opacity menjadi 1 (fade-in)
+                scale: 1, // Mengubah scale menjadi 1 (tidak ada zoom)
+                ease: "power2.inOut", // Efek animasi
+                x: 200 * (i + 1),
+              });
     }
     </script>
   </body>
