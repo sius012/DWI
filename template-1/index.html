@@ -2,8 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, " ; />
+    <title>Template 1</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -19,115 +29,215 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- font-->
-    <title>Template 1</title>
-    <style>
-      h1,
-      h2,h3{
-        font-family: "Great Vibes";
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+    
+   <style>
+      html,
+      body {
+        overflow-x: hidden;
       }
-
-      p {
+      body {
+        position: relative;
+      }
+      p,span {
         font-family: "Merriweather";
       }
-
-      .main-title{
-        font-size: 50pt;
-        
+      h1,h2,h3{
+        font-family: "Great Vibes";
+      }
+      .time-card {
+        margin: 10px;
+        background-color: rgb(2, 54, 33);
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        font-family: "Times New Roman", Times, serif !important;
       }
 
-      .date-title{
+      .backdrop-main {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        animation: imagetrans 2s ease-in-out;
+        filter: brightness(0.6);
+        left: 0px;
+      }
+      .container-content {
+      }
+      .title-container {
+        top: 40%;
+        position: absolute;
+        color: white;
+        display: block;
+        z-index: 30;
+      }
+      .main-title {
+        font-size: 55pt;
+        font-family: "Great Vibes";
+      }
+      #backdrop-collider {
+        background-color: rgb(0, 217, 255);
+        width: inherit;
+        height: 100%;
+        position: fixed;
+        z-index: 2;
+        
+      }
+      #backdrop-section {
+        position: relative;
+      }
+      #open-invitation {
+        color: rgb(255, 255, 255);
+        z-index: 100;
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: rgb(10, 97, 29);
+        border-radius: 10px;
+      }
+      .date-title {
         font-size: 15pt;
         font-family: "Merriweather";
       }
-      .container-content {
-        overflow-y: scroll;
-        height: 100vh;
-      }
-
-      .backdrop-fixer {
+      .ornament-container {
+        position: absolute;
         width: 100%;
+        height: 100%;
+        overflow: clip;
+      }
+      .ornament-flower-2 {
+        position: absolute;
+        width: 300px;
+        z-index: 20;
+        left: -100px;
+        bottom: -50px;
+        animation: floating2 10s linear alternate-reverse infinite;
+      }
+      .clouds {
+        bottom: -100px;
+        left: -400px;
+        z-index: 10;
+      }
+      @keyframes floating2 {
+        0%,
+        100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        30% {
+          transform: translate(10px, 10px) scale(1.05);
+        }
+        30% {
+          transform: translate(-20px, -10px) scale(1.1);
+        }
+        70% {
+          transform: translate(-10px, 20px);
+        }
+      }
+      .backdrop-fixer {
+        width: inherit;
         position: fixed;
         opacity: 0.2;
         filter: blur(5px);
         z-index: -2;
         height: 100vh;
         top: 0px;
+        left: 0px;
+      }
+      @media (max-width: 768px) {
+        .elem {
+          max-width: 100%; /* Ubah lebar maksimum elemen menjadi 100% pada perangkat mobile */
+        }
+        #open-invitation {
+          display: unset;
+        }
+        html{
+        overflow: hidden;
       }
 
-      .backdrop-main {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        position: absolute;
-        animation: imagetrans 2s ease-in-out;
-        filter: brightness(0.6);
       }
-
-      .container-opening-card {
-        position: absolute;
-        width: 100%;
-        top: 35vh;
-        z-index: 100;
+      @media (min-width: 769px) {
+        #open-invitation {
+          display: none;
+        }
+        #backdrop-collider{
+          top: 0px;
+          display: unset;
+        }
       }
-
-      .title-container {
-        color: white;
-        z-index: 100;
+      @keyframes hiddenCard {
+        0% {
+          top: 0px;
+        }
+        100% {
+          top: -200%;
+          display: none;
+        }
       }
+      @keyframes floating {
+        0% {
+          transform: scale(1);
+        }
 
-      #open-invitation {
-        color: white;
-        z-index: 100;
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
       }
-
-      .container-content-main {
-        position: absolute;
-        width: 100%;
-        top: 10px;
+      .hidden-card {
+        animation: hiddenCard 2s ease-in-out;
       }
-
       .couple-img {
-        width: 100%;
+        width: 80%;
         height: 300px;
         object-fit: cover;
         border-radius: 50px;
       }
+      .container-couple {
+        
+      }
 
+      .ornament-flower {
+        width: 200px;
+        position: absolute;
+        left: -40px;
+        bottom: -50px;
+        animation: floating 5s infinite;
+      }
       .btn-instagram {
         background-color: rgb(0, 66, 32);
         color: white;
         padding: 10px;
         border-radius: 10px;
         transition: 1s;
+        
       }
-
-      .btn-instagram:hover{
+      .protocol-card {
+        background-color: rgb(0, 59, 43);
+        margin: 10px;
         color: white;
-        padding: 12px;
+        border-radius: 20px;
+        display: block;
+        height: 200px;
+        padding: 10px;
       }
 
-      .btn-primary {
-        background-color: #ffffff12;
-        border: none;
-        border-radius: 10px;
-        font-family: "Merriweather", serif;
-        padding: 10px 20px;
-        border: 2px solid rgba(0, 79, 18, 0.461);
-        color: rgb(0, 79, 19);
-      }
-
-      .btn-primary:hover{
-        background-color: rgb(13, 103, 30);
-        border: 2px solid rgba(0, 79, 18, 0.461);
-      }
-      .pp{
-        width: 100%;
-      }
-
-      
-
+      .protocol-card img {
+        mix-blend-mode: screen;
+        width: 50px;
+        margin: 10px;
+        margin-top: 20%;
+      } 
       .form-control,.form-select{
         background-color: rgba(255, 255, 255, 0.293);
         border: 1px solid rgba(0, 79, 18, 0.571)
@@ -140,24 +250,52 @@
         border-radius: 10px;
         backdrop-filter: blur(2px);
       }
+      .pp{
+        width: 100%;
+      }
+      .btn-primary {
+        background-color: #ffffff12;
+        border: none;
+        border-radius: 10px;
+        font-family: "Merriweather", serif;
+        padding: 10px 20px;
+        border: 2px solid rgba(0, 79, 18, 0.461);
+        color: rgb(0, 79, 19);
+      }
+      .backdrop-fixer {
+        width: 100%;
+        position: fixed;
+        opacity: 0.2;
+        filter: blur(5px);
+        z-index: -2;
+        height: 100vh;
+        top: 0px;
+        left: 10px;
+      }
+      .image-gallery-trans2{
+        display: unset;
+        animation:imageAnim2 3s ease-in-out both;
+      }
 
-      @media (min-width: 769px){
-        #open-invitation{
-          display:none;
+      .gallery-container .col-lg-4{
+
+      }
+
+      @keyframes imageAnim2{
+        0%{
+          transform: translateX(100px) translateY(200px) scale(0.1);
+          opacity: 0;
+        }
+        100%{
+          transform: translateX(0px) translateY(0px) scale(1);
+          opacity: 1;
         }
       }
-      @media (max-width: 768px) {
-        /* CSS styles to apply when the viewport width is 768px or less */
-        /* For example, you might adjust font sizes or layout for smaller screens here */
-
-        #open-invitation{
-          display: unset;
-        }
-
-
-      }
-
-      @keyframes bottomToTop {
+      
+     .bottom-to-top{
+        animation: bottomToTop 2s ease-in-out;
+     }
+     @keyframes bottomToTop {
         0% {
           opacity: 0;
           margin-top: 100px
@@ -167,59 +305,74 @@
           margin-left: 0px;
         }
       }
+      
+.d-flex {
+  border:2px solid #000;
+}
+.d-flex picture {
+  width:300px;
+  flex: auto;
+  cursor:pointer;
+  border:2px solid #000;
 
-      @keyframes rotateImage{
+}
+
+@media (min-width: 992px) { 
+  .w-lg-50 {width:50%!important;}
+}
+.carousel-item img {
+  border-radius: 20px !important;
+  display: none;
+}
+
+.image-gallery-trans{
+        animation:imageAnim .6s cubic-bezier(.25,.46,.45,.94) both;
+      }
+
+@keyframes imageAnim{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes rotateImage{
         0%{
           opacity: 0;
-          transform: rotateX(360deg);
+          transform: scale(0);
         }
         100%{
           opacity: 1;
-          transform: rotateY(0deg);
+          transform: scale(1);
         }
       }
 
-     .bottom-to-top{
-        animation: bottomToTop 2s ease-in-out;
-     }
-
-     .right-to-left{
-        animation: bottomToTop 2s ease-in-out;
-     }
-
-
-     .img2{
-      margin-top: 50px;
-     }
-     .clouds {
-        bottom: -100px;
-        left: -400px;
-        z-index: 10;
-      }
-
-     .time-card {
-        margin: 10px;
-        background-color: rgb(2, 54, 33);
-        padding: 10px;
-        color: white;
-        border-radius: 10px;
-        font-family: "Times New Roman", Times, serif !important;
-      }
-
-      .rotate-img{
-        perspective: 100px;
+      .rotate-image{
         animation: rotateImage 2s ease-in-out;
       }
-
+      .btn-primary:hover{
+        background-color: rgb(13, 103, 30);
+        border: 2px solid rgba(0, 79, 18, 0.461);
+      }
+      .btn-instagram:hover{
+        color: white;
+        padding: 12px;
+      }
+      .form-control:focus{
+        border: 2px solid  rgb(13, 103, 30);
+        box-shadow: none !important;
+        background-color: rgb(255,255,255, 0.5) !important
+      }
       #disk-player {
         z-index: 100;
         position: fixed;
         left: 10px;
-        bottom: 50px;
+        bottom: 10px;
         width: 50px;
       }
-
-      
       .spining {
         animation: spining 2s linear infinite;
       }
@@ -230,591 +383,490 @@
         }
 
         100% {
-          transform: rotate(620deg);
+          transform: rotate(720deg);
         }
       }
-
-      @keyframes imagetrans {
-        0% {
-          filter: brightness(0) blur(2px);
-        }
-        100% {
-          filter: brightness(0.6) blur(0px);
-        }
-        
-      }
-
-      @keyframes floating{
-         0% {
-          transform: scale(1);
-        }
-
-        50% {
-          transform: scale(1.1);
-        }
-
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .container-couple{
-        animation: rotateImage 2s ease-in-out
-      } 
-
-      .ornament-flower{
-        width: 200px;
-        position: absolute;
-        left: -40px;
-        bottom: -50px;
-        animation: floating 5s infinite;
-      }
-
-      .ornament-flower-2{
-        position: absolute;
-        width: 300px;
-        z-index: 11;
-        left: -100px;
-        bottom: -50px;
-        animation: floating2 10s linear alternate-reverse infinite;
-      }
-
-      .ornament-cover-bottom{
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        overflow: clip;
-      }
-
-      img{
-        overflow-clip-margin: content-box;
-        overflow: clip;
-
-      }
-
-
-      @keyframes floating2{
-        0%,100%{
-          transform: translate(0px ,0px) scale(1);
-          
-        }
-        30%{
-          transform: translate(10px,10px) scale(1.05);
-        }
-        30%{
-          transform: translate(-20px,-10px) scale(1.1);
-        }
-        70%{
-          transform: translate(-10px,20px);
-        }
-      }
-
-      .protocol-card{
-        background-color: rgb(0, 59, 43);
-        margin: 10px;
-        padding: 10px 30px;
-        color: white;
-        border-radius: 20px;
-        display: block;
-        height: 200px;
-      }
-
-      .protocol-card img{
-        mix-blend-mode: screen;
-        width: 50px;
-        margin: 10px;
-        margin-top: 50%;
-      }
-
-      @keyframes imageAnim{0%{transform:rotateY(20deg) rotateX(35deg) translate(300px,-300px) skew(-35deg,10deg);opacity:0}100%{transform:rotateY(0) rotateX(0deg) translate(0,0) skew(0deg,0deg);opacity:1}}
-
-      .image-gallery-trans{
-        animation:imageAnim .6s cubic-bezier(.25,.46,.45,.94) both;
-      }
-
     </style>
   </head>
   <body>
-    <img src="img/vinyl.png" alt="" id="disk-player" onclick="toggleMusic()">
-    <!-- <audio controls autoplay class="d-none" id="music-audio">
+    <div class="row" id="content-all">
+      <div class="col-md-7" id="backdrop-section">
+        <div class="" id="backdrop-collider">
+           <audio controls autoplay class="d-none" id="music-audio">
       <source src="music/music-1.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
-    </audio> -->
-    <div class="row">
-      <div class="col-md-7 p-0" style="height: 100vh">
-        <div class="position-relative">
+    </audio>
+     <img src="img/vinyl.png" alt="" id="disk-player" class='spining' onclick="toggleMusic()">
           <img src="img/img1.jpg" alt="" class="backdrop-main" />
-          <div class="container-opening-card">
-            <div class="container text-center title-container">
-              <h1 class="main-title" id="">Roby & Dika</h1>
-              <h4 class="text-center date-title">Minggu, 25 Januari 2023</h4>
+          <div class="container text-center title-container">
+            <h1 class="main-title" id="">Roby & Dika</h1>
+            <h4 class="text-center date-title">Minggu, 25 Januari 2023</h4>
+            <p>To: <br>Mr Bambang</p>
+            <div class="d-block p-3">
               <a href="#content-main" id="open-invitation">Open Invitation</a>
             </div>
-                    
-            
           </div>
-          <div class=" ornament-cover-bottom" >
+          <div class="ornament-container">
             <img
-            src="img/img8.png"
-            alt=""
-            style="mix-blend-mode: screen;"
-            class="position-absolute clouds"
-            width="1000px"
-          />
-          <img
-            src="img/img8.png"
-            alt=""
-            style="mix-blend-mode: screen;"
-            class="position-absolute clouds"
-            width="200px"
-          />
-    
-          <img
-            src="img/img8.png"
-            alt=""
-            style="mix-blend-mode: screen;"
-            class="position-absolute clouds"
-            width="500px"
-          />
-          <img
-            src="img/img8.png"
-            alt=""
-            style="mix-blend-mode: screen;"
-            class="position-absolute clouds"
-            width="200px"
-          />
-          <img src="img/flower4.png" alt="" class="ornament-flower-2">
-          <img src="img/flower4.png" alt="" class="ornament-flower-2" style="left: unset;right: -100px;transform: scale(-1);">
+              src="img/img8.png"
+              alt=""
+              style="mix-blend-mode: screen"
+              class="position-absolute clouds"
+              width="1000px"
+            />
+            <img
+              src="img/img8.png"
+              alt=""
+              style="mix-blend-mode: screen"
+              class="position-absolute clouds"
+              width="200px"
+            />
+
+            <img
+              src="img/img8.png"
+              alt=""
+              style="mix-blend-mode: screen"
+              class="position-absolute clouds"
+              width="500px"
+            />
+            <img
+              src="img/img8.png"
+              alt=""
+              style="mix-blend-mode: screen"
+              class="position-absolute clouds"
+              width="200px"
+            />
+            <img src="img/flower4.png" alt="" class="ornament-flower-2" />
+            <img
+              src="img/flower4.png"
+              alt=""
+              class="ornament-flower-2"
+              style="left: unset; right: -100px; transform: scale(-1)"
+            />
           </div>
-            
         </div>
-       
       </div>
-      <div class="col-md-5 p-0" id="content-main">
-        <div class="container-content position-relative">
-          <div class="">
-            <img src="img/backdrop1.jpeg" alt="" class="backdrop-fixer" />
-            <div class="container-content-main text-center px-3">
-              <img src="img/img7.png" alt="" style="width: 200px" />
-              <div class="container p-0">
-                <div class="col-12 text-center p-0">
-                  <div class="fade-in mb-3">
-                    <img src="img/img2.png" class="img2" width="300px" />
+      <div class="col-md-5 position-relative">
+        <img src="img/backdrop1.jpeg" alt="" class="backdrop-fixer" />
+        <div class="container-content">
+          <!-- Title-->
+          <div class="container p-1">
+            <div class="col-12 text-center p-0">
+              <img src="img/img7.png" alt="" style="width: 400px; margin-top: 3px;">
+              <div class="fade-in mb-3">
+                <img src="img/img2.png" class="img2" width="300px" />
+              </div>
+              <h5 class="wedding-invitation mt-3 mb-3">WEDDING INVITATION</h5>
+              <h2 class="fade-in" style="font-size: 40pt">Roby & Dika</h2>
+              <h5>
+                <span style="font-weight: lighter">#FromDateToLifeMa</span>
+              </h5>
+            </div>
+          </div>
+          <!-- image -->
+          <p class="fade-in p-3" style="text-align: center; margin-top: 100px">
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
+            dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+            kasih dan sayang. Sungguh, pada demikian itu benar-benar terdapat
+            tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.” (QS. Ar-Rum
+            ayat 21)
+          </p>
+
+          <p class="fade-in p-2" style="text-align: center">
+            Seraya memohon ridho Allah SWT, perkenankan kami mengundang
+            Bapak/Ibu/Saudara/i untuk menyaksikan dan merestui pernikahan
+            putra-putri kami
+          </p>
+          <div class="container mt-4 p-5" style="border-radius: 10px">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <div
+                  class="container-couple position-relative"
+                  style="margin-bottom: 50px"
+                >
+                  <img
+                    src="img/img3.jpg"
+                    alt=""
+                    class="img3 mx-auto mb-3 couple-img"
+                  />
+                  <img src="img/flower1.png" alt="" class="ornament-flower" />
+                  <img
+                    src="img/flower1.png"
+                    alt=""
+                    class="ornament-flower"
+                    style="right: -40px !important; left: unset"
+                  />
+                </div>
+
+                <h4>Roby Simanjutak</h4>
+                <p>Putra dari bapak Romeo Simanjuntak</p>
+                <a href="" class="btn-instagram"><i class="fa fa-instagram mr-1 p-2" aria-hidden="true"></i><span class="d-inline m-2">Instagram</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-4">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h2 style="font-size: 60px">&</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="container p-5 mt-2">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <div
+                  class="container-couple position-relative"
+                  style="margin-bottom: 50px"
+                >
+                  <img
+                    src="img/img4.jpg"
+                    alt=""
+                    class="img3 mx-auto mb-3 couple-img"
+                  />
+                  <img src="img/flower1.png" alt="" class="ornament-flower" />
+                  <img
+                    src="img/flower1.png"
+                    alt=""
+                    class="ornament-flower"
+                    style="right: -40px !important; left: unset"
+                  />
+                </div>
+                <h4>Herdika Sembiring</h4>
+                <p>Putri dari bapak Arman Sembiring</p>
+                <a href="" class="btn-instagram"><i class="fa fa-instagram mr-1 p-2" aria-hidden="true"></i><span class="d-inline m-2">Instagram</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h4>Saturday</h4>
+                <h3>04 05 23</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3>Akad Nikah</h3>
+                <p>09:00 - 10:00 WIB</p>
+
+                <p class="text-center">
+                  JW Marriott Jakarta JW Marriott Jkt, Kuningan, Kuningan Tim.,
+                  Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
+                  Ibukota Jakarta 12950, Indonesia Kota Jakarta Selatan
+                </p>
+                <a href="" class="btn btn-primary'"><button class="btn btn-primary">View map</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid mt-5 m-0 p-3" style="border-radius: 40px">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3>Resepsi</h3>
+                <p>09:00 - 10:00 WIB</p>
+
+                <p class="text-center">
+                  JW Marriott Jakarta JW Marriott Jkt, Kuningan, Kuningan Tim.,
+                  Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
+                  Ibukota Jakarta 12950, Indonesia Kota Jakarta Selatan
+                </p>
+                <a href="" class="btn btn-primary'"><button class="btn btn-primary">View map</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mt-5 animate__animated animate__bounce">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3>Save the Date!</h3>
+                <h5>SEPTEMBER 07TH, 2024</h5>
+
+                <div class="row mt-4 justify-content-center">
+                  <div class="col-2 time-card">
+                    <span id="days">365</span><br>
+                    <span>Hari</span>
                   </div>
-                  <h5 class="wedding-invitation mt-3 mb-3">
-                    WEDDING INVITATION
-                  </h5>
-                  <h2 class="fade-in" style="font-size: 40pt">Roby & Dika</h2>
-                  <h5>
-                    <span style="font-weight: lighter">#FromDateToLifeMa</span>
-                  </h5>
+                  <div class="col-2 time-card">
+                    <span id="hours">17</span><br>
+                    <span>Jam</span>
+                  </div>
+                  <div class="col-2 time-card">
+                    <span id="minutes"> 33</span><br>
+                    <span>Menit</span>
+                  </div>
+                  <div class="col-2 time-card">
+                    <span id="seconds">51</span><br>
+                    <span>Detik</span>
+                  </div>
                 </div>
               </div>
-              <p
-                class="fade-in p-3"
-                style="text-align: center; margin-top: 100px"
+            </div>
+          </div>
+          <div class="row mt-5 justify-content-center">
+            <div class="col-11  text-center  fade-in">
+              <h3>Our Story</h3>
+              <div
+                id="carouselExampleCaptions"
+                class="carousel slide"
+                data-bs-ride="carousel"
               >
-                "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-                pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
-                cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
-                antaramu rasa kasih dan sayang. Sungguh, pada demikian itu
-                benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum
-                yang berpikir.” (QS. Ar-Rum ayat 21)
-              </p>
-
-              <p class="fade-in" style="text-align: center">
-                Seraya memohon ridho Allah SWT, perkenankan kami mengundang
-                Bapak/Ibu/Saudara/i untuk menyaksikan dan merestui pernikahan
-                putra-putri kami
-              </p>
-
-              <div class="container-fluid" style="">
-                <div class="container mt-4 p-5" style="border-radius: 10px">
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <div class="container-couple position-relative" style="margin-bottom: 50px;">
-                        <img
-                        src="img/img3.jpg"
-                        alt=""
-                        class="img3 mx-auto mb-3 couple-img"
-                        />
-                        <img src="img/flower1.png" alt="" class="ornament-flower" >
-                        <img src="img/flower1.png" alt="" class="ornament-flower" style="right: -40px !important; left: unset;" >
-                      </div>
-
-                      <h4>Roby Simanjutak</h4>
-                      <p>Putra dari bapak Romeo Simanjuntak</p>
-                      <a href="" class="btn-instagram">Instagram</a>
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/img5.jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>First slide label</h5>
+                      <p>
+                        <p class="text-center">
+                          JW Marriott Jakarta JW Marriott Jkt, Kuningan, Kuningan Tim.,
+                          Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
+                          Ibukota Jakarta 12950, Indonesia Kota Jakarta Selatan
+                        </p>
+                      </p>
                     </div>
                   </div>
-                </div>
-
-                <div class="container mt-4">
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <h2 style="font-size: 60px">&</h2>
+                  <div class="carousel-item">
+                    <img src="img/img5.jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Second slide label</h5>
+                      <p>
+                        Some representative placeholder content for the second
+                        slide.
+                      </p>
                     </div>
                   </div>
-                </div>
-
-                <div class="container p-5 mt-2">
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <div class="container-couple position-relative" style="margin-bottom: 50px;">
-                        <img
-                        src="img/img4.jpg"
-                        alt=""
-                        class="img3 mx-auto mb-3 couple-img"
-                        />
-                        <img src="img/flower1.png" alt="" class="ornament-flower" >
-                        <img src="img/flower1.png" alt="" class="ornament-flower" style="right: -40px !important; left: unset;" >
-                      </div>
-                      <h4>Herdika Sembiring</h4>
-                      <p>Putri dari bapak Arman Sembiring</p>
-                      <a href="" class="btn-instagram">Instagram</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="container mt-5">
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <h4>Saturday</h4>
-                      <h3>04 05 23</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="container mt-5">
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <h3>Akad Nikah</h3>
-                      <p>09:00 - 10:00 WIB</p>
-
-                      <p class="text-center">
-                        JW Marriott Jakarta JW Marriott Jkt, Kuningan, Kuningan
-                        Tim., Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah
-                        Khusus Ibukota Jakarta 12950, Indonesia Kota Jakarta
-                        Selatan
+                  <div class="carousel-item">
+                    <img src="img/img5.jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Third slide label</h5>
+                      <p>
+                        Some representative placeholder content for the third
+                        slide.
                       </p>
                     </div>
                   </div>
                 </div>
-
-                <div
-                  class="container-fluid mt-5 m-0 p-3"
-                  style="border-radius: 40px"
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="prev"
                 >
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <h3>Resepsi</h3>
-                      <p>09:00 - 10:00 WIB</p>
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
 
-                      <p class="text-center">
-                        JW Marriott Jakarta JW Marriott Jkt, Kuningan, Kuningan
-                        Tim., Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah
-                        Khusus Ibukota Jakarta 12950, Indonesia Kota Jakarta
-                        Selatan
-                      </p>
-                    </div>
-                  </div>
+              <p class="mt-4">
+                "Once in a while, right in the middle of an ordinary life,
+                love gives us a fairy tale."
+              </p>
+            </div>
+          </div>
+          <div class="row mt-5 justify-content-center">
+            <div class="col-11 text-center">
+              <h3>Prewedding</h3>
+              <iframe style="width: 100%;" src="https://www.youtube.com/embed/23aqDgK4FQg?si=ERaLMhweCcfVHVwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="container-fluid mt-5">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3>Gallery</h3>
+<!-- Gallery -->
+              <div class="row gallery-container">
+                <div class="col-lg-4 col-6  mb-lg-0 p-1">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Boat on Calm Water"
+                  />
+
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Wintry Mountain Landscape"
+                  />
                 </div>
 
-                <div class="container mt-5 animate__animated animate__bounce">
-                  <div class="row">
-                    <div class="col-12 text-center fade-in">
-                      <h3>Save the Date!</h3>
-                      <h5>SEPTEMBER 07TH, 2024</h5>
+                <div class="col-lg-4 col-6 mb-lg-0 p-1">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Mountains in the Clouds"
+                  />
 
-                      <div class="row mt-4 justify-content-center">
-                        <div class="col-2 time-card">
-                          <h3>365</h3>
-                          <p>Hari</p>
-                        </div>
-                        <div class="col-2 time-card">
-                          <h3>17</h3>
-                          <p>Jam</p>
-                        </div>
-                        <div class="col-2 time-card">
-                          <h3>33</h3>
-                          <p>Menit</p>
-                        </div>
-                        <div class="col-2 time-card">
-                          <h3>51</h3>
-                          <p>Detik</p>
-                        </div>
-                      </div>
-                      <button class="btn btn-primary mt-3">
-                        Add To Calender
-                      </button>
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Boat on Calm Water"
+                  />
+                </div>
+
+                <div class="col-lg-4 col-6 mb-lg-0 p-1">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea"
+                  />
+
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park"
+                  />
+                </div>
+              </div>
+<!-- Gallery -->
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid mt-5">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3>Live Streaming</h3>
+                <p>Please join and watch us become husband & wife</p>
+                <div class=" mb-5">
+                  <iframe
+                    src="https://www.youtube.com/embed/fq2CdnfijhQ?si=CmFUDx_bUivvWhML"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center fade-in">
+              <h3>Protokol Kesehatan</h3>
+              <div class="container protocol-card-container">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="protocol-card">
+                      <img src="img/distance.png" alt="">
+                     <h6 class="mt-2">Jaga Jarak</h6>
                     </div>
+                  </div>
+                  <div class="col-6">
+   
+                      <div class="protocol-card">
+                        <img src="img/mask.png" alt="">
+                       <h6 class="mt-2">Memakai Masker</h6>
+                      </div>
+                   
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-6">
+                    <div class="protocol-card">
+                      <img src="img/hand-sanitizer.png" alt="">
+                     <h6 class="mt-2">Memamaki Hand Sanitizer</h6>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                     <div class="protocol-card">
+                        <img src="img/mask.png" alt="">
+                       <h6 class="mt-3">Cek temperatur</h6>
+                      </div>
                   </div>
                 </div>
-                <div class="container mt-5">
-                    <div class="row">
-                      <div class="col-12 text-center fade-in">
-                        <h3>Our Story</h3>
-                        <div
-                          id="carouselExampleCaptions"
-                          class="carousel slide"
-                          data-bs-ride="carousel"
-                        >
-                          <div class="carousel-indicators">
-                            <button
-                              type="button"
-                              data-bs-target="#carouselExampleCaptions"
-                              data-bs-slide-to="0"
-                              class="active"
-                              aria-current="true"
-                              aria-label="Slide 1"
-                            ></button>
-                            <button
-                              type="button"
-                              data-bs-target="#carouselExampleCaptions"
-                              data-bs-slide-to="1"
-                              aria-label="Slide 2"
-                            ></button>
-                            <button
-                              type="button"
-                              data-bs-target="#carouselExampleCaptions"
-                              data-bs-slide-to="2"
-                              aria-label="Slide 3"
-                            ></button>
-                          </div>
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="img/img5.jpg" class="d-block w-100" alt="..." />
-                              <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>
-                                  <p class="text-center">
-                                    JW Marriott Jakarta JW Marriott Jkt, Kuningan, Kuningan Tim.,
-                                    Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
-                                    Ibukota Jakarta 12950, Indonesia Kota Jakarta Selatan
-                                  </p>
-                                </p>
-                              </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img src="img/img5.jpg" class="d-block w-100" alt="..." />
-                              <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>
-                                  Some representative placeholder content for the second
-                                  slide.
-                                </p>
-                              </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img src="img/img5.jpg" class="d-block w-100" alt="..." />
-                              <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>
-                                  Some representative placeholder content for the third
-                                  slide.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <button
-                            class="carousel-control-prev"
-                            type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="prev"
-                          >
-                            <span
-                              class="carousel-control-prev-icon"
-                              aria-hidden="true"
-                            ></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button
-                            class="carousel-control-next"
-                            type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="next"
-                          >
-                            <span
-                              class="carousel-control-next-icon"
-                              aria-hidden="true"
-                            ></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-        
-                        <p class="mt-4">
-                          "Once in a while, right in the middle of an ordinary life,
-                          love gives us a fairy tale."
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-        
-        
-                  <div class="container-fluid mt-5">
-                    <div class="row">
-                      <div class="col-12 text-center fade-in">
-                        <h3>Gallery</h3>
-                        <div class="container-fluid mt-5">
-                          <!-- Gallery -->
-                          <div class="row gallery-container">
-                            <div class="col-lg-4 col-md-12 mb-2 mb-lg-0">
-                              <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Boat on Calm Water"
-                              />
-        
-                              <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                                class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Wintry Mountain Landscape"
-                              />
-                            </div>
-        
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                              <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                                class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Mountains in the Clouds"
-                              />
-        
-                              <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Boat on Calm Water"
-                              />
-                            </div>
-        
-                            <div class="col-lg-4 mb-4 mb-lg-0">
-                              <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                                class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Waves at Sea"
-                              />
-        
-                              <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                                class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Yosemite National Park"
-                              />
-                            </div>
-                          </div>
-                          <!-- Gallery -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="container mt-5">
-                    <div class="row">
-                      <div class="col-12 text-center fade-in">
-                        <h3>Live Streaming</h3>
-                        <p>Please join and watch us become husband & wife</p>
-                        <div class="container mb-5">
-                          <iframe
-                            src="https://www.youtube.com/embed/fq2CdnfijhQ?si=CmFUDx_bUivvWhML"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3>Wedding Gift</h3>
+                <p class="mt-4">
+                  Your blessing and coming to our wedding are enough for us.
+                  However, if you want to give a gift we provide a Digital
+                  Envelope to make it easier for you. thank you
+                </p>
 
-                  <div class="container mt-5">
-                    <div class="row">
-                      <div class="col-12 text-center fade-in">
-                        <h3>Protokol Kesehatan</h3>
-                        <div class="container">
-                          <div class="row">
-                            <div class="col">
-                              <div class="protocol-card">
-                                <img src="img/distance.png" alt="">
-                               <h6 class="mt-2">Jaga Jarak</h6>
-                              </div>
-                            </div>
-                            <div class="col">
-             
-                                <div class="protocol-card">
-                                  <img src="img/mask.png" alt="">
-                                 <h6 class="mt-2">Memakai Masker</h6>
-                                </div>
-                             
-                            </div>
-                            <div class="w-100"></div>
-                            <div class="col">
-                              <div class="protocol-card">
-                                <img src="img/mask.png" alt="">
-                               <h6 class="mt-2">Memamaki Hand Sanitizer</h6>
-                              </div>
-                            </div>
-                            <div class="col">
-                               <div class="protocol-card">
-                                  <img src="img/mask.png" alt="">
-                                 <h6 class="mt-2">Cek temperatur</h6>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="container p-3">
+                  <div class="form-group">
+                    <select name="" id="" class="form-select">
+                      <option value="">BCA</option>
+                    </select>
                   </div>
-        
-                  <div class="container mt-5">
-                    <div class="row">
-                      <div class="col-12 text-center fade-in">
-                        <h3>Wedding Gift</h3>
-                        <p class="mt-4">
-                          Your blessing and coming to our wedding are enough for us.
-                          However, if you want to give a gift we provide a Digital
-                          Envelope to make it easier for you. thank you
-                        </p>
-        
-                        <div class="container p-3">
-                          <div class="form-group">
-                            <select name="" id="" class="form-select">
-                              <option value="">BCA</option>
-                            </select>
-                          </div>
-                          <div class="form-group form-control mt-3 mb-3 text-start">
-                            BANK : BCA<br />
-                            Account Number : 8375180797 <br />
-                            Account Name : Muhammad Fanny Al farizzy
-                          </div>
-                          <button class="btn btn-primary">Next</button>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="form-group form-control mt-3 mb-3 text-start">
+                    BANK : BCA<br />
+                    Account Number : 8375180797 <br />
+                    Account Name : Muhammad Fanny Al farizzy
                   </div>
-        
-                  <div class="container mt-5">
-                    <div class="row">
-                      <div class="col-12 text-center fade-in">
-                        <h1 class="fade-in mb-3">Wedding Wish</h1>
-                        <div class="form-group text-start mb-3">
-                          <label class="form-label ">Nama</label>
-                          <input type="text" class="form-control" />
-                        </div>
-                        <div class="form-group text-start">
-                          <label class="form-label ">Nama</label>
-                          <textarea
-                            name=""
-                            id=""
-                            cols="30"
-                            rows="5"
-                            class="form-control"
-                          ></textarea>
-                        </div>
-                        <div class="form-group mt-3">
-                          <button class="btn-primary">Send</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-12 text-center fade-in">
+                <h3 class="fade-in mb-3">Wedding Wish</h3>
+                <div class="form-group text-start mb-3">
+                  <label class="form-label ">Nama</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="form-group text-start">
+                  <label class="form-label ">Nama</label>
+                  <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="5"
+                    class="form-control"
+                  ></textarea>
+                </div>
+                <div class="form-group mt-3">
+                  <button class="btn-primary">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="container p-4">
             <div class="row chat-row" >
                 <div class="col-2 text-center">
@@ -826,119 +878,272 @@
                 </div>
             </div>
           </div>
-
-          <div class="container mt-5 p-3">
-            <div class="row">
-              <div class="col-12 text-center fade-in">
-                <p class="mt-4">Wedding Invitation</p>
-                <h1 class="fade-in mb-3">Roby & Dika</h1>
-                <p>
-                  09.07.2024 <br />
-                  #PromDateToLifeMate
-                </p>
-              </div>
-            </div>
-              </div>
+          <div class="row">
+            <div class="col-12 text-center fade-in">
+              <p class="mt-4">Wedding Invitation</p>
+              <h1 class="fade-in mb-3">Roby & Dika</h1>
+              <p>
+                09.07.2024 <br />
+                #PromDateToLifeMate
+              </p>
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
-
-    <!-- Script-->
     <script>
+      const backdropMain = document.getElementById("backdrop-section");
+      const contentMain = document.getElementById("content-main");
+      backdropMain.addEventListener("scroll", function () {
+      
+      });
+    </script>
+
+    <script>
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      // Fungsi untuk menambahkan atau menghapus kelas animasi
+      function toggleAnimation() {
+        var elem = document.querySelectorAll("p,h3,h4,h1");
+        for (let i = 0; i < elem.length; i++) {
+          let element = elem[i];
+          let className = "bottom-to-top";
+          if (isElementInViewport(element)) {
+            if (!element.classList.contains(className)) {
+              element.classList.add(className);
+            }
+          } else {
+          }
+        }
+
+        //image animation
+        var elem = document.querySelectorAll(".container-couple");
+        for (let i = 0; i < elem.length; i++) {
+          let element = elem[i];
+          let className = "rotate-img";
+          if (isElementInViewport(element)) {
+            if (!element.classList.contains(className)) {
+              element.classList.add(className);
+            }
+          } else {
+          }
+        }
+
+        var elem2 = document.querySelectorAll(".protocol-card");
+        for (let i = 0; i < elem2.length; i++) {
+          let element = elem2[i];
+          let className = "image-gallery-trans";
+          if (isElementInViewport(element)) {
+            if (!element.classList.contains(className)) {
+              element.classList.add(className);
+            }
+          } else {
+          }
+        }
+      }
+
+      //image-galery
+      //image animation
+
+      // Memanggil fungsi toggleAnimation() saat halaman di-scroll
+      // Memanggil fungsi toggleAnimation() pada saat halaman dimuat
+    </script>
+    <script>
+      function isElementInViewport(el) {
+         var rect = el.getBoundingClientRect();
+         return (
+             rect.top >= 0 &&
+             rect.left >= 0 &&
+             rect.bottom <=
+             (window.innerHeight || document.documentElement.clientHeight) &&
+             rect.right <=
+             (window.innerWidth || document.documentElement.clientWidth)
+         );
+         }
+
+         //image-galery
+           //image animation
+          
+         
+         
+         
+         // Memanggil fungsi toggleAnimation() saat halaman di-scroll
+         document.querySelector(".container-content").addEventListener("scroll", toggleAnimation);
+         window.addEventListener("scroll", toggleAnimation);
+         // Memanggil fungsi toggleAnimation() pada saat halaman dimuat
+
+          //audio
+         let toggleButton = document.getElementById("disk-player");
+         let audio = document.getElementById("music-audio");
+
+         function toggleMusic() {
+           if (audio.paused) {
+             audio.play();
+             toggleButton.classList.add("spining");
+           } else {
+             audio.pause();
+             toggleButton.classList.remove("spining");
+           }
+         }
+
+         const clouds = document.getElementsByClassName("clouds");
+         console.log(clouds.length);
+
+         for (let i = 0; i < clouds.length; i++) {
+           gsap.to(clouds[i], {
+             duration: 3, // Durasi animasi dalam detik
+             opacity: 0.8, // Mengubah opacity menjadi 1 (fade-in)
+             scale: 1, // Mengubah scale menjadi 1 (tidak ada zoom)
+             ease: "power2.inOut", // Efek animasi
+             x: 200 * (i + 1),
+           });
+ }
+ </script>
+    <script>
+      $(document).ready(function () {
         
-         function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <=
-                (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <=
-                (window.innerWidth || document.documentElement.clientWidth)
-            );
-            }
+        function isElementInViewports(elem) {
+          console.log("tes: " + elem);
+          var $elem = elem;
 
-            // Fungsi untuk menambahkan atau menghapus kelas animasi
-            function toggleAnimation() {
-            var elem = document.querySelectorAll("p,h3,h4,h1");
-            for (let i = 0; i < elem.length; i++) {
-               
-                let element = elem[i];
-                let className = "bottom-to-top"
-                if (isElementInViewport(element)) {
-                element.classList.add(className);
-                } else {
-                element.classList.remove(className);
+          // Get the viewport dimensions
+          var viewportTop = $(window).scrollTop();
+          var viewportBottom = viewportTop + $(window).height();
+          var viewportLeft = $(window).scrollLeft();
+          var viewportRight = viewportLeft + $(window).width();
+
+          // Get the element's position and dimensions
+          var elemTop = $elem.offset().top;
+          var elemBottom = elemTop + $elem.height();
+          var elemLeft = $elem.offset().left;
+          var elemRight = elemLeft + $elem.width();
+
+          // Check if the element is in the viewport
+          return (
+            elemBottom >= viewportTop &&
+            elemTop <= viewportBottom &&
+            elemRight >= viewportLeft &&
+            elemLeft <= viewportRight
+          );
+        }
+
+        $(window).scroll(function () {
+          console.log($(".gallery-container"));
+          $(".container-couple").each(function(){
+            if(isElementInViewports($(this))){
+              if (!$(this).hasClass("rotate-image")) {
+               $(this).addClass("rotate-image");
+             }
+            }
+          })
+          if (isElementInViewports($(".gallery-container"))) {
+            $(".gallery-container")
+              .children(".col-lg-4")
+              .each(function () {
+                if (!$(this).find("img").hasClass("image-gallery-trans2")) {
+                  $(this).find("img").addClass("image-gallery-trans2");
                 }
-            }
-
-            //image animation
-            var elem = document.querySelectorAll(".container-couple");
-            for (let i = 0; i < elem.length; i++) {
-               
-                let element = elem[i];
-                let className = "rotate-img"
-                if (isElementInViewport(element)) {
-                element.classList.add(className);
-                } else {
-                element.classList.remove(className);
-                }
-            }
-
-            var elem2 = document.querySelectorAll(".gallery-container .col-lg-4 img, .protocol-card");
-            for (let i = 0; i < elem2.length; i++) {
-                
-                let element = elem2[i];
-                let className = "image-gallery-trans"
-                if (isElementInViewport(element)) {
-                element.classList.add(className);
-                } else {
-                element.classList.remove(className);
-                }
-            }
-            
-            }
-
-            //image-galery
-              //image animation
-             
-            
-            
-            
-            // Memanggil fungsi toggleAnimation() saat halaman di-scroll
-            document.querySelector(".container-content").addEventListener("scroll", toggleAnimation);
-            window.addEventListener("scroll", toggleAnimation);
-            // Memanggil fungsi toggleAnimation() pada saat halaman dimuat
-            toggleAnimation();
-
-             //audio
-            // let toggleButton = document.getElementById("disk-player");
-            // let audio = document.getElementById("music-audio");
-
-            // function toggleMusic() {
-            //   if (audio.paused) {
-            //     audio.play();
-            //     toggleButton.classList.add("spining");
-            //   } else {
-            //     audio.pause();
-            //     toggleButton.classList.remove("spining");
-            //   }
-            // }
-
-            const clouds = document.getElementsByClassName("clouds");
-            console.log(clouds.length);
-
-            for (let i = 0; i < clouds.length; i++) {
-              gsap.to(clouds[i], {
-                duration: 3, // Durasi animasi dalam detik
-                opacity: 0.8, // Mengubah opacity menjadi 1 (fade-in)
-                scale: 1, // Mengubah scale menjadi 1 (tidak ada zoom)
-                ease: "power2.inOut", // Efek animasi
-                x: 200 * (i + 1),
               });
+          } else {
+          }
+
+          if(isElementInViewports($(".protocol-card-container"))){
+            $(".protocol-card-container").children(".row").children(".col-6").each(function(){
+              if (!$(this).find(".protocol-card").hasClass("image-gallery-trans")) {
+               
+                  $(this).find(".protocol-card").addClass("image-gallery-trans");
+                }
+            })
+          }else{
+          }
+        });
+
+        $("#open-invitation").click(function () {
+          $("#content-main").show();
+        });
+
+        $("#open-invitation").click(function () {
+          $("#backdrop-collider").animate({
+                top: "-200%",
+            }, 1000, function(){
+              $("#backdrop-collider").hide()
+              $("html").css("overflow", "auto")
+            })
+         
+        });
+
+
+       
+function checkResponsive() {
+    // Get the current screen width
+    var screenWidth = $(window).width();
+
+    // Example: Perform actions based on screen width
+    if (screenWidth < 768) {
+        // Actions for screens smaller than 768px wide (e.g., mobile)
+       
+        // Add your code here for mobile view
+    } else if (screenWidth >= 768 && screenWidth < 1024) {
+        // Actions for screens between 768px and 1023px wide (e.g., tablet)
+        $("#backdrop-collider").show();
+        $("#backdrop-collider").css("top","0px")
+        // Add your code here for tablet view
+    } else {
+        // Actions for screens 1024px and wider (e.g., desktop)
+        $("#backdrop-collider").show();
+        $("#backdrop-collider").css("top","0px")
+        // Add your code here for desktop view
     }
+}
+
+$(window).on('resize', function() {
+        checkResponsive();
+    });
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        function updateCountdown() {
+  const targetDate = new Date("2023-09-24 18:24:00").getTime(); // Change this to your target date
+  const now = new Date().getTime();
+  const timeRemaining = targetDate - now;
+
+  if (timeRemaining <= 0) {
+    // The countdown has ended
+    $("#countdown").html("<div class='timer'><span>00</span><span class='label'>Days</span></div><div class='timer'><span>00</span><span class='label'>Hours</span></div><div class='timer'><span>00</span><span class='label'>Minutes</span></div><div class='timer'><span>00</span><span class='label'>Seconds</span></div>");
+    return;
+  }
+
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+  // Update the HTML with the remaining time
+  $("#days").text(days.toString().padStart(2, "0"));
+  $("#hours").text(hours.toString().padStart(2, "0"));
+  $("#minutes").text(minutes.toString().padStart(2, "0"));
+  $("#seconds").text(seconds.toString().padStart(2, "0"));
+}
+
+// Update the countdown every second
+setInterval(updateCountdown, 1000);
+
+// Initial call to set up the countdown
+updateCountdown();
+
+      })
     </script>
   </body>
 </html>
