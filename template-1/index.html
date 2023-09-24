@@ -74,7 +74,7 @@
       .container-content {
       }
       .title-container {
-        top: 40%;
+        top: 30%;
         position: absolute;
         color: white;
         display: block;
@@ -149,7 +149,6 @@
         z-index: -2;
         height: 100vh;
         top: 0px;
-        left: 0px;
       }
       @media (max-width: 768px) {
         .elem {
@@ -270,7 +269,6 @@
         z-index: -2;
         height: 100vh;
         top: 0px;
-        left: 10px;
       }
       .image-gallery-trans2{
         display: unset;
@@ -452,7 +450,7 @@
           <!-- Title-->
           <div class="container p-1">
             <div class="col-12 text-center p-0">
-              <img src="img/img7.png" alt="" style="width: 400px; margin-top: 3px;">
+              <img src="img/img7.png" alt="" style="width: 90%; margin-top: 3px;">
               <div class="fade-in mb-3">
                 <img src="img/img2.png" class="img2" width="300px" />
               </div>
@@ -729,9 +727,6 @@
                     class="w-100 shadow-1-strong rounded mb-4"
                     alt="Wintry Mountain Landscape"
                   />
-                </div>
-
-                <div class="col-lg-4 col-6 mb-lg-0 p-1">
                   <img
                     src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
                     class="w-100 shadow-1-strong rounded mb-4"
@@ -756,6 +751,18 @@
                     src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
                     class="w-100 shadow-1-strong rounded mb-4"
                     alt="Yosemite National Park"
+                  />
+                </div>
+                <div class="col-lg-4 col-6 mb-lg-0 p-1">
+                    <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Yosemite National Park"
+                  />
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Waves at Sea"
                   />
                 </div>
               </div>
@@ -926,32 +933,23 @@
           } else {
           }
         }
-
-        //image animation
-        var elem = document.querySelectorAll(".container-couple");
-        for (let i = 0; i < elem.length; i++) {
-          let element = elem[i];
-          let className = "rotate-img";
-          if (isElementInViewport(element)) {
-            if (!element.classList.contains(className)) {
-              element.classList.add(className);
-            }
-          } else {
-          }
-        }
-
-        var elem2 = document.querySelectorAll(".protocol-card");
-        for (let i = 0; i < elem2.length; i++) {
-          let element = elem2[i];
-          let className = "image-gallery-trans";
-          if (isElementInViewport(element)) {
-            if (!element.classList.contains(className)) {
-              element.classList.add(className);
-            }
-          } else {
-          }
-        }
       }
+      var animationPlayed = [];
+
+      function checkAnimations() {
+        $("p").each(function(index) {
+          
+            var element = $(this);
+            var elementTop = element.offset().top;
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+
+            if (elementTop < scrollTop + windowHeight && !animationPlayed[index]) {
+                element.addClass("bottom-to-top");
+                animationPlayed[index] = true;
+            }
+        });
+    }
 
       //image-galery
       //image animation
@@ -979,8 +977,7 @@
          
          
          // Memanggil fungsi toggleAnimation() saat halaman di-scroll
-         document.querySelector(".container-content").addEventListener("scroll", toggleAnimation);
-         window.addEventListener("scroll", toggleAnimation);
+        
          // Memanggil fungsi toggleAnimation() pada saat halaman dimuat
 
           //audio
@@ -1039,6 +1036,7 @@
         }
 
         $(window).scroll(function () {
+          checkAnimations();
           console.log($(".gallery-container"));
           $(".container-couple").each(function(){
             if(isElementInViewports($(this))){
@@ -1077,7 +1075,7 @@
           $("#backdrop-collider").animate({
                 top: "-200%",
             }, 1000, function(){
-              $("#backdrop-collider").hide()
+
               $("html").css("overflow", "auto")
             })
          
