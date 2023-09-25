@@ -37,6 +37,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="  css/mm-masonry.css" rel="stylesheet" />
   </head>
     
    <style>
@@ -149,6 +150,7 @@
         z-index: -2;
         height: 100vh;
         top: 0px;
+        left: 0px;
       }
       @media (max-width: 768px) {
         .elem {
@@ -262,7 +264,7 @@
         color: rgb(0, 79, 19);
       }
       .backdrop-fixer {
-        width: 100%;
+        width: inherit;
         position: fixed;
         opacity: 0.2;
         filter: blur(5px);
@@ -324,7 +326,7 @@
 }
 
 .image-gallery-trans{
-        animation:imageAnim .6s cubic-bezier(.25,.46,.45,.94) both;
+        animation:imageAnim 3s cubic-bezier(.25,.46,.45,.94) both;
       }
 
 @keyframes imageAnim{
@@ -384,6 +386,47 @@
           transform: rotate(720deg);
         }
       }
+
+      .btn-white{
+        background-color: white !important;
+        border-radius: 20px;
+        transition: .2s;
+      }
+
+      .btn-white:hover{
+        transform: scale(1.2);
+      }
+
+      .gallery-row {
+          display: flex;
+          min-height: 300px;
+          max-height: 500px;
+      }
+      .gallery-img {
+          position: relative;
+          flex-grow: 1;
+          max-width: 33.3%;
+      }
+      .row-gallery{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .column-gallery{
+        flex: 25%;
+        max-width: 50%;
+      }
+      .img-hover-zoom{
+        height: auto;
+        overflow: hidden;
+      }
+      .img-hover-zoom img{
+        vertical-align: middle;
+        margin: 0;
+        padding: 2px;
+        border: 0;
+        
+      }
+
     </style>
   </head>
   <body>
@@ -444,7 +487,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 position-relative">
+      <div class="col-md-5 position-relative p-0">
         <img src="img/backdrop1.jpeg" alt="" class="backdrop-fixer" />
         <div class="container-content">
           <!-- Title-->
@@ -462,7 +505,7 @@
             </div>
           </div>
           <!-- image -->
-          <p class="fade-in p-3" style="text-align: center; margin-top: 100px">
+          <p class="fade-in p-4" style="text-align: center; margin-top: 100px">
             "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
             dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
@@ -471,7 +514,7 @@
             ayat 21)
           </p>
 
-          <p class="fade-in p-2" style="text-align: center">
+          <p class="fade-in p-4" style="text-align: center">
             Seraya memohon ridho Allah SWT, perkenankan kami mengundang
             Bapak/Ibu/Saudara/i untuk menyaksikan dan merestui pernikahan
             putra-putri kami
@@ -608,7 +651,7 @@
           </div>
           <div class="row mt-5 justify-content-center">
             <div class="col-11  text-center  fade-in">
-              <h3>Our Story</h3>
+              <h2>Our Story</h2>
               <div
                 id="carouselExampleCaptions"
                 class="carousel slide"
@@ -709,64 +752,38 @@
               <iframe style="width: 100%;" src="https://www.youtube.com/embed/23aqDgK4FQg?si=ERaLMhweCcfVHVwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
+          
           <div class="container-fluid mt-5">
-            <div class="row">
+            <div class="row justify-content-center">
               <div class="col-12 text-center fade-in">
-                <h3>Gallery</h3>
+                <h2>Gallery</h2>
 <!-- Gallery -->
-              <div class="row gallery-container">
-                <div class="col-lg-4 col-6  mb-lg-0 p-1">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
-
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Wintry Mountain Landscape"
-                  />
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Mountains in the Clouds"
-                  />
-
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Boat on Calm Water"
-                  />
+              <div class="row-gallery gallery-container">
+                <div class="column-gallery">
+                  <div class="img-hover-zoom">
+                      <img src="https://pixabay.com/get/g0ff09ef1879841b99ddd054a34163c5ff4ef02809250670c50e5d80f5bccb9d88d9f8139c96983220cd8bce4413fb98c561692f360b3f44537d80e3e40b7a057_1280.jpg" style="width: 100%;" alt="">
+                  </div>
+                  <div class="img-hover-zoom">  
+                    <img src="https://pixabay.com/get/g93c09ac29a5cfe6113b9bdce66254ce9cad04c7995a27f8268075fa6e37dffa9eb7c953babedcba07cfed8deb0251003a925d0832a72f93795c93025e3d7e766_1280.jpg" style="width: 100%;" alt="">
+                  </div>
+                  <div class="img-hover-zoom">
+                      <img src="https://img.freepik.com/premium-photo/serene-natural-background-depicting-peaceful-landscape-scenery-ai-generated_523886-6825.jpg" style="width: 100%;" alt="">
+                  </div>
                 </div>
 
-                <div class="col-lg-4 col-6 mb-lg-0 p-1">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Waves at Sea"
-                  />
-
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Yosemite National Park"
-                  />
-                </div>
-                <div class="col-lg-4 col-6 mb-lg-0 p-1">
-                    <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Yosemite National Park"
-                  />
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                    class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Waves at Sea"
-                  />
+                <div class="column-gallery">
+                  <div class="img-hover-zoom">
+                      <img src="https://img.freepik.com/premium-photo/beautiful-lake-natural-landscape-photography-wallpaper-relax-joyful-illustration_327903-1578669.jpg?w=360" style="width: 100%;" alt="">
+                  </div>
+                  <div class="img-hover-zoom">  
+                    <img src="https://4.img-dpreview.com/files/p/TS560x560~forums/57653690/352fed2909d04208a017933e97e16962" style="width: 100%;" alt="">
+                  </div>
+                  <div class="img-hover-zoom">
+                      <img src="https://i.pinimg.com/originals/b4/4b/18/b44b18635157aeb2b6600f3659bafffc.jpg" style="width: 100%;" alt="">
+                  </div>
                 </div>
               </div>
-<!-- Gallery -->
+
                 
               </div>
             </div>
@@ -775,7 +792,7 @@
           <div class="container-fluid mt-5">
             <div class="row">
               <div class="col-12 text-center fade-in">
-                <h3>Live Streaming</h3>
+                <h2>Live Streaming</h2>
                 <p>Please join and watch us become husband & wife</p>
                 <div class=" mb-5">
                   <iframe
@@ -789,9 +806,25 @@
               </div>
             </div>
           </div>
-          <div class="row">
+
+          <div class="row m-3" style="background-color: rgb(0, 59, 43); color: white;border-radius: 50px;" id="instagram-weeding-filer">
+            <div class="col-12 p-3 text-center">
+              <h1 style="color: white; font-size: 30pt;" class="p-2">Instagram Wedding Filter</h1>
+              <p class="p-3">Dapatkan momen terbaik anda ketika datang di acara pernikahan kami dengan menggunakan filter instagram</p>
+              <img style="width: 300px;border-radius: 30px;" src="https://th.bing.com/th/id/OIP.MuuiYhqEUO-bxxaqHusrCAHaKK?w=188&h=258&c=7&r=0&o=5&pid=1.7" alt="">
+              <div class="row mt-2 justify-content-center">
+                <div class="col-md-3">
+                
+                    <a href=""><button class="btn btn-white my-4">Buka Filter</button></a>
+                 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row mt-5">
             <div class="col-12 text-center fade-in">
-              <h3>Protokol Kesehatan</h3>
+              <h2>Protokol Kesehatan</h2>
               <div class="container protocol-card-container">
                 <div class="row">
                   <div class="col-6">
@@ -937,7 +970,7 @@
       var animationPlayed = [];
 
       function checkAnimations() {
-        $("p").each(function(index) {
+        $("p,h1,h2,h3,h4").each(function(index) {
           
             var element = $(this);
             var elementTop = element.offset().top;
@@ -1046,8 +1079,7 @@
             }
           })
           if (isElementInViewports($(".gallery-container"))) {
-            $(".gallery-container")
-              .children(".col-lg-4")
+            $(".img-hover-zoom")
               .each(function () {
                 if (!$(this).find("img").hasClass("image-gallery-trans2")) {
                   $(this).find("img").addClass("image-gallery-trans2");
@@ -1113,7 +1145,7 @@ $(window).on('resize', function() {
     <script>
       $(document).ready(function(){
         function updateCountdown() {
-  const targetDate = new Date("2023-09-24 18:24:00").getTime(); // Change this to your target date
+  const targetDate = new Date("2023-09-26 18:24:00").getTime(); // Change this to your target date
   const now = new Date().getTime();
   const timeRemaining = targetDate - now;
 
