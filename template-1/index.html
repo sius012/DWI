@@ -142,16 +142,6 @@
           transform: translate(-10px, 20px);
         }
       }
-      .backdrop-fixer {
-        width: inherit;
-        position: fixed;
-        opacity: 0.2;
-        filter: blur(5px);
-        z-index: -2;
-        height: 100vh;
-        top: 0px;
-        left: 0px;
-      }
       @media (max-width: 768px) {
         .elem {
           max-width: 100%; /* Ubah lebar maksimum elemen menjadi 100% pada perangkat mobile */
@@ -397,35 +387,22 @@
         transform: scale(1.2);
       }
 
-      .gallery-row {
-          display: flex;
-          min-height: 300px;
-          max-height: 500px;
-      }
-      .gallery-img {
-          position: relative;
-          flex-grow: 1;
-          max-width: 33.3%;
-      }
-      .row-gallery{
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .column-gallery{
-        flex: 25%;
-        max-width: 50%;
-      }
-      .img-hover-zoom{
-        height: auto;
-        overflow: hidden;
-      }
-      .img-hover-zoom img{
-        vertical-align: middle;
-        margin: 0;
-        padding: 2px;
-        border: 0;
-        
-      }
+      #gallery {
+      -webkit-column-count:5; /* split it into 5 columns */
+      -webkit-column-gap:5px; /* give it a 5px gap between columns */
+      -moz-column-count:5;
+      -moz-column-gap:5px;
+      column-count:2;
+      column-gap:5px;
+    }
+
+#gallery img {
+   width: 100% !important;
+   height: auto !important;
+   margin-bottom:5px; /* to match column gap */
+}
+
+
 
     </style>
   </head>
@@ -433,11 +410,11 @@
     <div class="row" id="content-all">
       <div class="col-md-7" id="backdrop-section">
         <div class="" id="backdrop-collider">
-           <audio controls autoplay class="d-none" id="music-audio">
+           <audio controls autoplay  id="music-audio">
       <source src="music/music-1.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-     <img src="img/vinyl.png" alt="" id="disk-player" class='spining' onclick="toggleMusic()">
+     <img src="img/vinyl.png" alt="" id="disk-player"  onclick="toggleMusic()">
           <img src="img/img1.jpg" alt="" class="backdrop-main" />
           <div class="container text-center title-container">
             <h1 class="main-title" id="">Roby & Dika</h1>
@@ -746,45 +723,30 @@
               </p>
             </div>
           </div>
-          <div class="row mt-5 justify-content-center">
-            <div class="col-11 text-center">
-              <h3>Prewedding</h3>
-              <iframe style="width: 100%;" src="https://www.youtube.com/embed/23aqDgK4FQg?si=ERaLMhweCcfVHVwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="container-fluid mb-5">
+            <div class="row mt-5 justify-content-center mb-5">
+              <div class="col-11 text-center" style="height: 400px;">
+                <h3>Prewedding</h3>
+                <iframe style="width: 100%; height: 80%;" src="https://www.youtube.com/embed/23aqDgK4FQg?si=ERaLMhweCcfVHVwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
+     
           
-          <div class="container-fluid mt-5">
-            <div class="row justify-content-center">
+          <div class="container-fluid ">
+            <div class="row mt-5 justify-content-center">
               <div class="col-12 text-center fade-in">
-                <h2>Gallery</h2>
-<!-- Gallery -->
-              <div class="row-gallery gallery-container">
-                <div class="column-gallery">
-                  <div class="img-hover-zoom">
-                      <img src="https://pixabay.com/get/g0ff09ef1879841b99ddd054a34163c5ff4ef02809250670c50e5d80f5bccb9d88d9f8139c96983220cd8bce4413fb98c561692f360b3f44537d80e3e40b7a057_1280.jpg" style="width: 100%;" alt="">
-                  </div>
-                  <div class="img-hover-zoom">  
-                    <img src="https://pixabay.com/get/g93c09ac29a5cfe6113b9bdce66254ce9cad04c7995a27f8268075fa6e37dffa9eb7c953babedcba07cfed8deb0251003a925d0832a72f93795c93025e3d7e766_1280.jpg" style="width: 100%;" alt="">
-                  </div>
-                  <div class="img-hover-zoom">
-                      <img src="https://img.freepik.com/premium-photo/serene-natural-background-depicting-peaceful-landscape-scenery-ai-generated_523886-6825.jpg" style="width: 100%;" alt="">
-                  </div>
-                </div>
-
-                <div class="column-gallery">
-                  <div class="img-hover-zoom">
-                      <img src="https://img.freepik.com/premium-photo/beautiful-lake-natural-landscape-photography-wallpaper-relax-joyful-illustration_327903-1578669.jpg?w=360" style="width: 100%;" alt="">
-                  </div>
-                  <div class="img-hover-zoom">  
-                    <img src="https://4.img-dpreview.com/files/p/TS560x560~forums/57653690/352fed2909d04208a017933e97e16962" style="width: 100%;" alt="">
-                  </div>
-                  <div class="img-hover-zoom">
-                      <img src="https://i.pinimg.com/originals/b4/4b/18/b44b18635157aeb2b6600f3659bafffc.jpg" style="width: 100%;" alt="">
-                  </div>
-                </div>
-              </div>
-
-                
+                <h3>Gallery</h3>
+                <div id="gallery">
+                  <img src="https://pixabay.com/get/gfaf166f3aee2150d84f4ebaaab9787b21a641aec927fd01da1ec6acf03f564e692509b3e3a94734751adba139b2bf8c8fa26def5827ad47ca7e1bfea3ee19d10_1280.jpg">
+                  <img src="https://pixabay.com/get/g0bae4ff29c44e20563c6789e4ad58f138e4cfd4ab14148c490dbb5831fdd8d63cd119c27b756aa503654414750867b51481453085d1c8b63736096e69dd7af39_1280.jpg">
+                  <img src="https://pixabay.com/get/g7f166f6826da2ad4f50350d5bbdbf0a2894b2c384fa20a9cf7aabdc2e6529bb3cf6f67791151c1acc49724a473f727fe9340d031bdf6ecd7fc4f437d9b5173db_1280.jpg">
+                  <img src="https://pixabay.com/get/ga35ef6d47609d2c2161d5d88a5c05ce4279e908e2741c06ce22d64058734f9c7cd3676c806e6d63e6f642b5a55c3d5923341db30228bc8119b4b37712829584c_1280.jpg">
+                  <img src="https://pixabay.com/get/g24093cadfa8c00c9a50a9b774788637aee6e1c7359bc19e6e45d4bb0a8b5c5d3e4b6640edbde89c1c7e867d6193e00da874ed0368b97f1e12e8c62a628448385_1280.jpg">
+                  <img src="https://pixabay.com/get/g92c7b31aa5856687a46ffccc15395967549d576dbcf02b421e4ca2e0d8ffe494ec5f1a0d3272f56800380d424af46f6eaa13d884d3da1e2065b6f7e29354c28b_1280.jpg">
+                  <img src="https://pixabay.com/get/g05924d0c62650cf2d66462f41d44494d1c897207c8a013d00702936fd5cd290b900a3880fe685819ec79833159685bff8f7e525f8284a91d255f271149a1fd6d_1280.jpg">
+                  <img src="https://pixabay.com/get/g2798907cdc94c055cd1fa030d5db5959a11e1f9e08f5963be96c352336ce2dce31e163911680ba478bb391bb2f9e5db437c4154275677c1a8ed9d6a5af0c37fa_1280.jpg" alt="">
+                </div>        
               </div>
             </div>
           </div>
@@ -1016,7 +978,7 @@
           //audio
          let toggleButton = document.getElementById("disk-player");
          let audio = document.getElementById("music-audio");
-
+         audio.play();
          function toggleMusic() {
            if (audio.paused) {
              audio.play();
@@ -1078,13 +1040,13 @@
              }
             }
           })
-          if (isElementInViewports($(".gallery-container"))) {
-            $(".img-hover-zoom")
-              .each(function () {
-                if (!$(this).find("img").hasClass("image-gallery-trans2")) {
-                  $(this).find("img").addClass("image-gallery-trans2");
-                }
-              });
+          if (isElementInViewports($("#gallery"))) {
+            $("#gallery").children("img").each(function(){
+              if (!$(this).hasClass("img-gallery-trans2")) {
+               $(this).addClass("image-gallery-trans2");
+               }
+            })
+              
           } else {
           }
 
