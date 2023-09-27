@@ -75,7 +75,7 @@
       .container-content {
       }
       .title-container {
-        top: 30%;
+        top: 33%;
         position: absolute;
         color: white;
         display: block;
@@ -151,6 +151,13 @@
         }
         html{
         overflow: hidden;
+      }
+
+      .backdrop-fixer{
+        left: 0px;
+      }
+      .title-container{
+        top: 30%
       }
 
       }
@@ -406,15 +413,15 @@
 
     </style>
   </head>
-  <body>
+  <body >
     <div class="row" id="content-all">
       <div class="col-md-7" id="backdrop-section">
         <div class="" id="backdrop-collider">
-           <audio controls autoplay  id="music-audio">
+           <audio controls autoplay class="d-none" id="music-audio">
       <source src="music/music-1.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-     <img src="img/vinyl.png" alt="" id="disk-player"  onclick="toggleMusic()">
+     <img src="img/vinyl.png" alt="" id="disk-player" class='spining' onclick="toggleMusic()">
           <img src="img/img1.jpg" alt="" class="backdrop-main" />
           <div class="container text-center title-container">
             <h1 class="main-title" id="">Roby & Dika</h1>
@@ -468,11 +475,13 @@
         <img src="img/backdrop1.jpeg" alt="" class="backdrop-fixer" />
         <div class="container-content">
           <!-- Title-->
-          <div class="container p-1">
-            <div class="col-12 text-center p-0">
-              <img src="img/img7.png" alt="" style="width: 90%; margin-top: 3px;">
+          <div class="container ">
+            <div class="col-12 text-center position-relative p-0">
+              <img src="img/img7.png" alt="" style="width: 90%; margin-top: 2px;">
+              <img src="img/img2.png" class="" width="300px"  />
               <div class="fade-in mb-3">
-                <img src="img/img2.png" class="img2" width="300px" />
+                
+                <img src="img/img2.jpg" class="position-absolute" width="212px" height="237px" style="transform: translate(-102px, -245px); border-radius: 400px; object-fit: cover;" >
               </div>
               <h5 class="wedding-invitation mt-3 mb-3">WEDDING INVITATION</h5>
               <h2 class="fade-in" style="font-size: 40pt">Roby & Dika</h2>
@@ -978,7 +987,18 @@
           //audio
          let toggleButton = document.getElementById("disk-player");
          let audio = document.getElementById("music-audio");
-         audio.play();
+         
+         let hasPlay = false;
+
+         document.getElementById("open-invitation").addEventListener("click", function(){
+            audio.play();
+         })
+          window.addEventListener("scroll", function(){
+            if(hasPlay==false){
+              audio.play();
+              hasPlay=true;
+            }
+         })
          function toggleMusic() {
            if (audio.paused) {
              audio.play();
@@ -1099,9 +1119,9 @@ function checkResponsive() {
     }
 }
 
-$(window).on('resize', function() {
-        checkResponsive();
-    });
+  $(window).on('resize', function() {
+          checkResponsive();
+      });
       });
     </script>
     <script>
