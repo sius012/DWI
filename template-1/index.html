@@ -38,6 +38,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="  css/mm-masonry.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
   </head>
     
    <style>
@@ -409,6 +412,11 @@
    margin-bottom:5px; /* to match column gap */
 }
 
+.flip-2-hor-top-1 {
+	-webkit-animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
 
 
     </style>
@@ -426,9 +434,9 @@
           <div class="container text-center title-container">
             <h1 class="main-title" id="">Roby & Dika</h1>
             <h4 class="text-center date-title">Minggu, 25 Januari 2023</h4>
-            <p>To: <br>Mr Bambang</p>
+            <p>To: <br>Mr   </p>
             <div class="d-block p-3">
-              <a href="#content-main" id="open-invitation">Open Invitation</a>
+              <a class="p-3" href="#content-main" id="open-invitation">Open Invitation</a>
             </div>
           </div>
           <div class="ornament-container">
@@ -616,7 +624,7 @@
 
                 <div class="row mt-4 justify-content-center">
                   <div class="col-2 time-card">
-                    <span id="days">365</span><br>
+                    <span id="days">365</span><br 
                     <span>Hari</span>
                   </div>
                   <div class="col-2 time-card">
@@ -863,7 +871,7 @@
                   <input type="text" class="form-control" />
                 </div>
                 <div class="form-group text-start">
-                  <label class="form-label ">Nama</label>
+                  <label class="form-label ">Deskripsi</label>
                   <textarea
                     name=""
                     id=""
@@ -1085,15 +1093,15 @@
           $("#content-main").show();
         });
 
-        $("#open-invitation").click(function () {
-          $("#backdrop-collider").animate({
-                top: "-200%",
-            }, 1000, function(){
+          $("#open-invitation").click(function () {
+            $("#backdrop-collider").animate({
+                  top: "-200%",
+              }, 1000, function(){
 
-              $("html").css("overflow", "auto")
-            })
-         
-        });
+                $("html").css("overflow", "auto")
+              })
+          
+          });
 
 
        
