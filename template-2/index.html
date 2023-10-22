@@ -211,10 +211,12 @@
 
       .slide-left {
         animation: slideleft 1s ease-in-out;
+        animation-delay: 1s;
       }
 
       .slide-right {
         animation: slideright 1s ease-in-out;
+        animation-delay: 1s;
       }
 
       .slide-up {
@@ -718,7 +720,7 @@
             <div class="col-md-12">
               <img
                 src="img/ornament-png.png"
-                style="width: 200px; margin-top: 30px"
+                style="width: 200px; margin-top: 10px"
               />
             </div>
           </div>
@@ -729,8 +731,9 @@
                 alt=""
                 class="position-absolute header-content"
                 style="
-                  transform: translateX(-40px) translateY(10px);
-                  width: 320px;
+                  left: 50%;
+                  transform: translateX(-50%) translateY(20px);
+                  width: 250px;
                 "
                 anim="fades"
               />
@@ -771,7 +774,7 @@
                   src="img/ornament-png.png"
                   style="width: 200px"
                   class="header-content mt-5"
-                  anim="blury"
+                  anim="slide-up"
                 />
               </div>
             </div>
@@ -878,10 +881,10 @@
 
           <!-- Save the Date -->
           <div
-            class="container-fluid mt-5 text-center container-content"
+            class="container-fluid mt-5 text-center container-content header-content"
             style="margin-bottom: 100px"
           >
-            <h3 class="header-content" anim="slide-right">Save The Date</h3>
+            <h3 class="" anim="slide-right">Save The Date</h3>
             <p>Minggu, 14 Oct 2023</p>
             <div class="row">
               <div class="col header-content" anim="slide-down">
@@ -903,7 +906,7 @@
             </div>
           </div>
 
-          <div class="container-fluid text-center mt-5 container-content">
+          <div class="container-fluid text-center mt-5 container-content header-content" anim="slide-right">
             <h3>Prewedding</h3>
             <iframe
               width="100%"
@@ -970,7 +973,7 @@
             </p>
           </div>
 
-          <div class="container-fluid mt-5 text-center header-content header-content">
+          <div class="container-fluid mt-5 text-center header-content">
             <h3 class="">SATURDAY</h3>
             <p>February 03rd, 2024</p>
           </div>
@@ -1344,16 +1347,16 @@
           }
         }
 
-        $(".header-content,p").each(function (i) {
+        $(".header-content").each(function (i) {
           inframechecker($(this),i);
         });
 
-        $(".header-content,p").on("animationend", function (e) {
+        $(".header-content").on("animationend", function (e) {
           $(e.target).css("opacity", 1);
         });
         $(window).on("scroll", function () {
           // Get the element you want to animate
-          $(".header-content,p").each(function (i) {
+          $(".header-content").each(function (i) {
             inframechecker($(this),i);
           });
         });
