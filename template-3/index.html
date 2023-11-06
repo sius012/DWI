@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/anim.css" />
+    <style>
+      @import url("font/stylesheet.css");
+
+      .couple-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .btn-instagram {
+        text-decoration: none;
+        padding: 5px;
+        border: 1px solid rgb(88, 82, 82);
+        border-radius: 5px;
+        color: black;
+      }
+
+      h3,
+      p {
+        font-family: "Visia Pro";
+      }
+
+      .container-text-cover {
+        bottom: 30%;
+      }
+
+      .c-1 {
+        font-size: 60pt;
+      }
+
+      .section-1 {
+        color: white;
+        height: 100vh;
+        padding-top: 30%;
+        background: url("img/couple1.jpg");
+      }
+
+      /*Section Weeding Of*/
+
+      .section-2 {
+        padding: 20px;
+        background-color: rgb(246, 246, 246);
+      }
+
+      .c-2 {
+        font-size: 40pt;
+      }
+
+      .container-couple {
+        padding: 20px;
+        box-shadow: 0px 10px 30px -20px;
+        width: 90%;
+        margin-bottom: 30px;
+      }
+
+      .container-couple img {
+        margin-top: 20px;
+      }
+
+      .couple-title {
+        font-size: 25pt;
+        margin-top: 50px;
+      }
+
+      /*Section 3 (Ayat2)*/
+      .section-3 {
+        color: white;
+        background-color: rgb(87, 103, 79);
+      }
+
+      .text-verse {
+        padding: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      /*Section 4 (Our Story) */
+      .section-4 {
+        padding: 10px;
+      }
+
+      .our-story {
+        padding-bottom: 20px;
+        padding-top: 40px;
+      }
+
+      .carousel-item img {
+        height: 600px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .carousel {
+        width: 80% !important;
+      }
+
+      /*Section 5 (Galery Photo)*/
+      .section-5 {
+        color: white;
+        padding: 10px;
+      }
+
+      .img-hm {
+        width: 80%;
+      }
+
+      .img-galery .col img {
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .img-galery .col {
+        padding: 2px;
+      }
+
+      .img-galery-viewer {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .text-hm {
+        margin-top: 80px;
+        margin-bottom: 80px;
+      }
+
+      /*Section 6 (Save the Date)*/
+      .section-6 {
+        padding-top: 40pt;
+        padding-bottom: 20pt;
+      }
+
+      .text-std {
+        font-size: 30pt;
+      }
+
+      .time-card {
+        background-color: white;
+        padding-top: 10px;
+        border-radius: 10px;
+        padding-bottom: 10px;
+      }
+
+      .container-time .row {
+        width: 80%;
+      }
+
+      .time-card p {
+        margin: 0px;
+      }
+
+      .text-std-date {
+        font-size: 20pt;
+      }
+
+      .text-counter {
+        font-size: 20pt;
+        margin: 0px;
+        font-weight: bold;
+      }
+
+      /*Section 7 (The Wedding Days)*/
+      .section-7 {
+        padding: 40px;
+      }
+
+      .card-save-the-date {
+        margin-top: 50px;
+      }
+
+      .twd-subtext {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .twd-subtext p {
+        font-size: 12pt;
+        background-color: whitesmoke;
+        width: 180px;
+        border-radius: 10px;
+      }
+
+      .address {
+        margin-top: 20px;
+        padding-bottom: 30pt;
+      }
+
+      /*Section 10 (Wedding Gift) */
+      .section-10 {
+        padding-top: 10px;
+        padding-bottom: 50px;
+      }
+
+      .card-bank-info {
+        background-color: aliceblue;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+
+      .protocol-card {
+        background-color: red;
+        margin: 2px;
+        height: 200px;
+      }
+
+      .protocol-container .col {
+        padding: 0px;
+      }
+
+      .protocol-container {
+        width: 80%;
+        margin-top: 30px;
+      }
+
+      /*Section 12 */
+      .section-12 {
+        padding-top: 100px;
+      }
+
+      .container-chat {
+        border-bottom: 1px solid rgb(69, 69, 69);
+      }
+
+      .chat-subject {
+        font-weight: bold;
+        margin: 0px;
+        font-size: 15pt;
+      }
+
+      .chat-message {
+        margin: 5px;
+      }
+
+      .chat-date {
+        margin: 0px;
+      }
+
+      .section-13 {
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+
+      .couple-img-1 {
+        width: 100%;
+        box-shadow: inset rgb(0, 0, 0) 0px 0px 0px 500px;
+      }
+
+      .container-cover {
+        position: fixed;
+        width: inherit;
+        height: 100vh;
+      }
+
+      .main-title {
+        font-family: "Creattion Demo";
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row p-0">
+        <div class="col-md-7 p-0 position-relative">
+          <div class="container-cover">
+            <img
+              src="img/couple2.jpg"
+              alt=""
+              class="couple-img-1 position-absolute"
+            />
+            <div class="container position-absolute container-text-cover">
+              <h3 class="main-title c-1">Aliong & Ling - Ling</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 p-0">
+          <div
+            class="container-fluid section-1 text-center animated"
+            anim="slide-up"
+          >
+            <p>Wedding Invitation</p>
+            <h3 class="main-title c-2">Aliong & Ling - Ling</h3>
+            <p>May 404th, 2024</p>
+          </div>
+          <div
+            class="container-fluid section-2 text-center animated"
+            data-type="slide-left"
+          >
+            <div class="container my-5">
+              <h3>The Wedding of</h3>
+              <p>
+                The pleasure of your company is requested at the marriage of
+              </p>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 text-center">
+                <div class="container-couple mx-auto">
+                  <img src="img/groom.jpeg" alt="" class="couple-img" />
+                  <p class="couple-title">Wang Aliong</p>
+                  <p class="couple-title-of-son">
+                    Anak dari bapak Vincent Wijaya
+                  </p>
+                  <a href="" class="btn-instagram">@aliongchawnima</a>
+                </div>
+                <div class="container-couple mx-auto">
+                  <img src="img/bride.jpeg" alt="" class="couple-img" />
+                  <p class="couple-title">Chen Ling</p>
+                  <p class="couple-title-of-son">
+                    Anak dari bapak Vincent Wijaya
+                  </p>
+                  <a href="" class="btn-instagram">@ling2</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid section-3 text-center animated">
+            <p class="text-verse m-0">
+              Dan dari rusuk yang diambil TUHAN Allah dari manusia itu,
+              dibangun-Nyalah seorang perempuan, lalu dibawa-Nya kepada manusia
+              itu. <br />
+              (Kej 2:2)
+            </p>
+          </div>
+          <div class="container-fluid section-4 text-center animated">
+            <h3 class="our-story">Our Story</h3>
+            <div
+              id="carouselExampleCaptions"
+              class="carousel slide mx-auto"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="https://www.brownsbride.com/wp-content/uploads/2022/02/MC2021-566_websize.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>
+                      Some representative placeholder content for the first
+                      slide.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://i.pinimg.com/550x/2e/6a/53/2e6a5314a736f5acb433315b7ac45d45.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>
+                      Some representative placeholder content for the second
+                      slide.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHRYy62oqA6_n558h6dsZK8Bk4q8OPz_Tcu9wyGL2tkN8Budd-PjoeIp1Bht_8sOTKyGs&usqp=CAU"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>
+                      Some representative placeholder content for the third
+                      slide.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="container-fluid section-5 text-center animated">
+            <div class="container galery-photo">
+              <div class="container-text-gf py-4">
+                <h3>Galery Photo</h3>
+                <p>A memory that we will treasure forever</p>
+              </div>
+              <div class="container-photo">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12 p-0">
+                      <img
+                        class="img-galery-viewer"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHAlJ3KjqK0Et58VFH7iR64m3B5F6ExYTYHa7g8QrvFO6gWQnaKpbO_wppIChMnbPU5gQ&usqp=CAU"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="row img-galery">
+                    <div class="col">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHRYy62oqA6_n558h6dsZK8Bk4q8OPz_Tcu9wyGL2tkN8Budd-PjoeIp1Bht_8sOTKyGs&usqp=CAU"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi-sQqPltGDhi8UaHpAd1N7lZLNUdqTB9c9Ngnp5iSV7UUbn2r7BtRDFzSoMERQ2xID7g&usqp=CAU"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcdAfpYa67-lBIoOoysSXdyvngkmQpsi6q1JHSw1hZ1xSRf9f05DuwDi5ntNQN5JNLZhQ&usqp=CAU"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5VowPvmo8VRcE7VhvgimOpMEMKZ-Jd_xKYIGZQ4PXsfHIXfsKlrRKdz2f1lH0tk7oMQ&usqp=CAU"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col">
+                      <img
+                        src="https://www.bridesbythefalls.com/uploads/filemanager/blogImages/Burgh_Brides_Pittsburgh_Wedding_Elegant_Pennsylvanian_Wedding_Playful_Spins_6302.webp"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container happiest-moment">
+              <div class="text-hm">
+                <h3 class="">Happiest Moments</h3>
+                <p>A memory that we will treasure forever</p>
+              </div>
+              <img
+                src="https://img.youtube.com/vi/48OzZ6FoaNs/hqdefault.jpg"
+                alt=""
+                class="img-hm pb-5"
+              />
+            </div>
+          </div>
+          <div class="container-fluid section-6 text-center animated">
+            <h3 class="text-std">Save the Date</h3>
+            <p class="text-std-date">May 04th,2024</p>
+            <div class="line">-</div>
+            <div class="container-time">
+              <div class="row mx-auto">
+                <div class="col">
+                  <div class="time-card">
+                    <p class="text-counter">10</p>
+                    <p>Days</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="time-card">
+                    <p class="text-counter">10</p>
+                    <p>Hours</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="time-card">
+                    <p class="text-counter">10</p>
+                    <p>Minutes</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="time-card">
+                    <p class="text-counter">10</p>
+                    <p>Seconds</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid section-7 text-center animated">
+            <h3>The Wedding Day</h3>
+            <p>Save the date</p>
+            <div class="container card-save-the-date">
+              <h3>Saturday</h3>
+              <p class="">May 04th, 2024</p>
+            </div>
+          </div>
+          <div class="container-fluid section-8 text-center animated">
+            <div class="akad-nikah twd-subtext">
+              <h4>Akad Nikah</h4>
+              <p class="mx-auto">09:00 - 10:00</p>
+            </div>
+            <div class="resepsi twd-subtext">
+              <h4>Resepsi</h4>
+              <p class="mx-auto">09:00 - 10:00</p>
+            </div>
+            <div class="night-party twd-subtext">
+              <h4>Night Party</h4>
+              <p class="mx-auto">09:00 - 10:00</p>
+            </div>
+            <div class="address">
+              <p class="fw-bold">Sheraton Grand Jakarta Gandaria City Hotel</p>
+              <p>
+                Jalan Sultan Iskandar Muda , Kebayoran Lama Utara, Kecamatan
+                Kebayoran Baru Jakarta
+              </p>
+              <a href="" class="view-maps">View Maps</a>
+            </div>
+          </div>
+          <div class="container-fluid section-9 text-center animated">
+            <h4 id="instagram-wedding-filter">Instagram Wedding Filter</h4>
+            <p>
+              Capture your moment while attending our wedding by using the
+              Instagram filter below.
+            </p>
+            <a href="" class="btn-filter">Use Filter</a>
+          </div>
+          <div class="container-fluid section-10 text-center animated">
+            <p id="wedding-gift">Wedding Gift</p>
+            <p>
+              Your blessing and coming to our wedding are enough for us.
+              However, if you want to give a gift we provide a Digital Envelope
+              to make it easier for you. thank you
+            </p>
+            <div class="container">
+              <div class="form-group">
+                <select name="" id="" class="form-select"></select>
+              </div>
+              <div class="form-group card-bank-info">
+                <div class="row o">
+                  <div class="col-8 text-start">
+                    <p><b>BANK BCA (014)</b></p>
+                    <p class="m-0">
+                      <span>Account Number</span
+                      ><span><br /><b>232124214</b></span>
+                    </p>
+                    <p class="m-0">
+                      <span>Account Name</span><span><br /><b>Aliong</b></span>
+                    </p>
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid section-11 text-center animated">
+            <h4>Protected Yourself And Other from Covid-19</h4>
+            <div class="container">
+              <div class="row protocol-container mx-auto">
+                <div class="col"><div class="protocol-card">1</div></div>
+                <div class="col">
+                  <div class="protocol-card">2</div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                  <div class="protocol-card">3</div>
+                </div>
+                <div class="col">
+                  <div class="protocol-card">4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid section-12 text-center animated">
+            <h3>Wedding Wish</h3>
+            <div class="form-group">
+              <input type="text" placeholder="Nama" class="form-control" />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="4"
+                class="form-control"
+              ></textarea>
+              <button class="btn">Kirim</button>
+            </div>
+            <div class="container-fluid container-chat text-start">
+              <div class="row">
+                <p class="chat-subject">Santo</p>
+                <p class="chat-date">12 Feb 2023</p>
+                <p class="chat-message">Njir Selamat ya</p>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid section-13 text-center animated">
+            <div class="container-couple-end-text">
+              <p>May 04th 2024</p>
+              <h3>Aliong & Ling-ling</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function doElementsOverlap(element1, element2) {
+        const rect1 = element1[0].getBoundingClientRect();
+        const rect2 = element2[0].getBoundingClientRect();
+        return (
+          rect1.right > rect2.left &&
+          rect1.left < rect2.right &&
+          rect1.bottom > rect2.top &&
+          rect1.top < rect2.bottom
+        );
+      }
+      $(document).ready(function () {
+        let currentindex = 0;
+        function inframechecker(elm, i) {
+          var element = elm;
+          elm.attr("  ")
+          // Calculate the element's position
+          var elementTop = element.offset().top;
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // Check if the element is in the viewport
+          if (elementTop - scrollTop < windowHeight - 100) {
+            currentindex += 1;
+            if (element.attr("anim") != undefined) {
+              element.addClass(element.attr("anim"));
+            } else {
+              element.addClass("fades");
+            }
+          } else {
+            currentindex = 0;
+            // Remove the class if the element is not in the viewport
+          }
+        }
+
+        $(".animated").each(function (i) {
+          inframechecker($(this), i);
+        });
+
+        $(".animated").on("animationend", function (e) {
+          $(e.target).css("opacity", 1);
+        });
+        $(window).on("scroll", function () {
+          // Get the element you want to animate
+          $(".animated").each(function (i) {
+            inframechecker($(this), i);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
