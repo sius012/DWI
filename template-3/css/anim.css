@@ -2,6 +2,19 @@
   opacity: 0;
 }
 
+.spining {
+  animation: spining 2s linear infinite;
+}
+@keyframes spining {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+} 
+
 @keyframes slideleft {
   0% {
     transform: translateX(-100%);

@@ -21,11 +21,15 @@
       crossorigin="anonymous"
     />
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+  ></script>
     <link rel="stylesheet" href="css/anim.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
       @import url("font/stylesheet.css");
 
@@ -45,12 +49,14 @@
       }
 
       h3,
+      h4,
       p {
         font-family: "Visia Pro";
       }
 
       .container-text-cover {
         bottom: 30%;
+        z-index: 200;
       }
 
       .c-1 {
@@ -127,6 +133,12 @@
       .section-5 {
         color: white;
         padding: 10px;
+        background: rgb(142, 177, 147);
+        background: linear-gradient(
+          90deg,
+          rgba(142, 177, 147, 1) 35%,
+          rgba(107, 128, 114, 1) 100%
+        );
       }
 
       .img-hm {
@@ -168,6 +180,7 @@
         padding-top: 10px;
         border-radius: 10px;
         padding-bottom: 10px;
+        box-shadow: 0px 0px 30px -20px;
       }
 
       .container-time .row {
@@ -191,6 +204,8 @@
       /*Section 7 (The Wedding Days)*/
       .section-7 {
         padding: 40px;
+        background-image: url("img/backgroundTWD.jpeg");
+        color: white;
       }
 
       .card-save-the-date {
@@ -221,16 +236,28 @@
       }
 
       .card-bank-info {
-        background-color: aliceblue;
+        background-color: rgb(225, 225, 225);
         padding: 20px;
         border-radius: 10px;
         margin-top: 20px;
       }
 
       .protocol-card {
-        background-color: red;
+        border: 1.5px solid black;
         margin: 2px;
         height: 200px;
+        padding: 30px;
+        border-radius: 10px;
+      }
+
+      .protocol-card img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 30px;
+      }
+
+      .protocol-card p {
+        font-weight: bold;
       }
 
       .protocol-container .col {
@@ -238,7 +265,7 @@
       }
 
       .protocol-container {
-        width: 80%;
+        width: 70%;
         margin-top: 30px;
       }
 
@@ -268,6 +295,8 @@
       .section-13 {
         padding-top: 30px;
         padding-bottom: 20px;
+        background-color: rgb(83, 99, 81);
+        color: white;
       }
 
       .couple-img-1 {
@@ -279,11 +308,103 @@
         position: fixed;
         width: inherit;
         height: 100vh;
+        z-index: 50;
       }
+      
 
       .main-title {
         font-family: "Creattion Demo";
         color: white;
+      }
+
+      .img-select {
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px -30px black;
+        border: 2px solid white;
+      }
+
+      .img-galery-viewer {
+        border-radius: 20px;
+      }
+
+      .actived-select {
+        width: 105% !important;
+        height: 105% !important;
+      }
+
+      .view-maps {
+        text-decoration: none;
+        width: 200px !important;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 50px;
+        border-radius: 50px;
+      }
+
+      .btn-filter {
+        text-decoration: none;
+        width: 200px !important;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 50px;
+        border-radius: 50px;
+      }
+
+      .form-control {
+        margin-bottom: 10px;
+        background-color: rgb(230, 230, 230);
+        border: none;
+      }
+
+      .btn-send {
+        padding: 10px;
+        background-color: rgb(65, 106, 92);
+        width: 100%;
+        color: white;
+        border-radius: 40px;
+      }
+
+      .form-select {
+        background-color: cadetblue;
+        color: white;
+      }
+
+      .btn-open{
+        border: 1px solid white;
+        color: white;
+        border-radius: 30px;
+      }
+
+      .couple-img-1{
+        height: 100vh;
+        object-fit: cover;
+      }
+      html{
+          overflow-x: hidden;
+        }
+
+        body{overflow-x: hidden}
+
+      @media only screen and (max-width: 600px) {
+      
+               
+
+      }
+
+      @media only screen and (min-width: 599px) {
+      .btn-open{
+        display: none;
+      }
+               
+      
+    }
+
+    #disk-player {
+        z-index: 200;
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+        width: 80px;
       }
     </style>
   </head>
@@ -291,39 +412,64 @@
     <div class="container-fluid">
       <div class="row p-0">
         <div class="col-md-7 p-0 position-relative">
+          
           <div class="container-cover">
+            <div class="box-shadow position-absolute" style="box-shadow: inset 0px 0px 100px 10px; width: 100%; height: 100%;z-index: 100;">
+              <audio controls autoplay class="d-none" id="music-audio">
+                <source src="music/music2.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+              <img
+                src="img/vinyl.png"
+                alt=""
+                id="disk-player"
+                class="spining"
+                onclick="toggleMusic()"
+              />
+            </div>
             <img
               src="img/couple2.jpg"
               alt=""
-              class="couple-img-1 position-absolute"
+              class="couple-img-1 position-absolute"  style="filter: brightness(0.8);"
             />
-            <div class="container position-absolute container-text-cover">
+            
+            <div class="container position-absolute container-text-cover text-white p-5" > 
               <h3 class="main-title c-1">Aliong & Ling - Ling</h3>
+              <h4 >Hai, Jude</h4>
+              <button class="btn btn-open">Open Invitation</button>
             </div>
           </div>
         </div>
-        <div class="col-md-5 p-0">
+        <div class="col-md-5 p-0" style="background-color: whitesmoke">
           <div
             class="container-fluid section-1 text-center animated"
             anim="slide-up"
           >
-            <p>Wedding Invitation</p>
-            <h3 class="main-title c-2">Aliong & Ling - Ling</h3>
-            <p>May 404th, 2024</p>
+            <h3 class="animated" anim="slide-up" delay="2">
+              Wedding Invitation
+            </h3>
+            <h3 class="main-title c-2 animated" anim="slide-down" delay="3">
+              Aliong & Ling - Ling
+            </h3>
+            <p class=" animated" anim="slide-down" delay="4">May 404th, 2024</p>
           </div>
           <div
             class="container-fluid section-2 text-center animated"
             data-type="slide-left"
           >
             <div class="container my-5">
-              <h3>The Wedding of</h3>
-              <p>
+              <h3 class="animated" anim="slide-up" delay="1">The Wedding of</h3>
+              <p class="animated" anim="slide-up" delay="2">
                 The pleasure of your company is requested at the marriage of
               </p>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 animated" anim="slide-left" delay="3">
               <div class="col-12 text-center">
-                <div class="container-couple mx-auto">
+                <div
+                  class="container-couple mx-auto animated"
+                  anim="slide-right"
+                  delay="4"
+                >
                   <img src="img/groom.jpeg" alt="" class="couple-img" />
                   <p class="couple-title">Wang Aliong</p>
                   <p class="couple-title-of-son">
@@ -331,7 +477,11 @@
                   </p>
                   <a href="" class="btn-instagram">@aliongchawnima</a>
                 </div>
-                <div class="container-couple mx-auto">
+                <div
+                  class="container-couple mx-auto animated"
+                  anim="slide-right"
+                  delay="4.2"
+                >
                   <img src="img/bride.jpeg" alt="" class="couple-img" />
                   <p class="couple-title">Chen Ling</p>
                   <p class="couple-title-of-son">
@@ -342,7 +492,11 @@
               </div>
             </div>
           </div>
-          <div class="container-fluid section-3 text-center animated">
+          <div
+            class="container-fluid section-3 text-center animated animated"
+            anim="slide-down"
+            delay="2"
+          >
             <p class="text-verse m-0">
               Dan dari rusuk yang diambil TUHAN Allah dari manusia itu,
               dibangun-Nyalah seorang perempuan, lalu dibawa-Nya kepada manusia
@@ -350,7 +504,7 @@
               (Kej 2:2)
             </p>
           </div>
-          <div class="container-fluid section-4 text-center animated">
+          <div class="container-fluid section-4 text-center mb-5  animated" anim="slide-down" delay="2" animated" anim="slide-left" delay="2">
             <h3 class="our-story">Our Story</h3>
             <div
               id="carouselExampleCaptions"
@@ -449,15 +603,15 @@
               </button>
             </div>
           </div>
-          <div class="container-fluid section-5 text-center animated">
+          <div class="container-fluid section-5 text-center  animated" anim="slide-up" delay="1">
             <div class="container galery-photo">
               <div class="container-text-gf py-4">
-                <h3>Galery Photo</h3>
-                <p>A memory that we will treasure forever</p>
+                <h3 class="animated" anim="slide-up" delay="3">Galery Photo</h3>
+                <p class="animated" anim="slide-up" delay="4">A memory that we will treasure forever</p>
               </div>
               <div class="container-photo">
                 <div class="container">
-                  <div class="row">
+                  <div class="row  animated" anim="slide-up" delay="1.2">
                     <div class="col-12 p-0">
                       <img
                         class="img-galery-viewer"
@@ -469,30 +623,35 @@
                   <div class="row img-galery">
                     <div class="col">
                       <img
+                        class="img-select actived-select  animated" anim="slide-up" delay="1.4"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHRYy62oqA6_n558h6dsZK8Bk4q8OPz_Tcu9wyGL2tkN8Budd-PjoeIp1Bht_8sOTKyGs&usqp=CAU"
                         alt=""
                       />
                     </div>
                     <div class="col">
                       <img
+                        class="img-select  animated" anim="slide-left" delay="1.6"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi-sQqPltGDhi8UaHpAd1N7lZLNUdqTB9c9Ngnp5iSV7UUbn2r7BtRDFzSoMERQ2xID7g&usqp=CAU"
                         alt=""
                       />
                     </div>
                     <div class="col">
                       <img
+                        class="img-select  animated" anim="slide-right" delay="1.8"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcdAfpYa67-lBIoOoysSXdyvngkmQpsi6q1JHSw1hZ1xSRf9f05DuwDi5ntNQN5JNLZhQ&usqp=CAU"
                         alt=""
                       />
                     </div>
                     <div class="col">
                       <img
+                        class="img-select  animated" anim="slide-left" delay="2"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO5VowPvmo8VRcE7VhvgimOpMEMKZ-Jd_xKYIGZQ4PXsfHIXfsKlrRKdz2f1lH0tk7oMQ&usqp=CAU"
                         alt=""
                       />
                     </div>
                     <div class="col">
                       <img
+                        class="img-select  animated" anim="slide-right" delay="2.2"
                         src="https://www.bridesbythefalls.com/uploads/filemanager/blogImages/Burgh_Brides_Pittsburgh_Wedding_Elegant_Pennsylvanian_Wedding_Playful_Spins_6302.webp"
                         alt=""
                       />
@@ -502,51 +661,52 @@
               </div>
             </div>
             <div class="container happiest-moment">
-              <div class="text-hm">
-                <h3 class="">Happiest Moments</h3>
-                <p>A memory that we will treasure forever</p>
+              <div class="text-hm animated" anim="slide-right" delay="1">
+                <h3 class="  animated" anim="slide-right" delay="2">Happiest Moments</h3>
+                <p class=" animated" anim="slide-right" delay="2.3">A memory that we will treasure forever</p>
               </div>
               <img
                 src="https://img.youtube.com/vi/48OzZ6FoaNs/hqdefault.jpg"
                 alt=""
-                class="img-hm pb-5"
+                class="img-hm pb-5  animated" anim="slide-right" delay="2.5"
               />
             </div>
           </div>
-          <div class="container-fluid section-6 text-center animated">
+          <div class="container-fluid section-6 text-center  animated mb-5" anim="slide-right" delay="1">
+            <div class="background-cont"></div>
             <h3 class="text-std">Save the Date</h3>
             <p class="text-std-date">May 04th,2024</p>
             <div class="line">-</div>
             <div class="container-time">
               <div class="row mx-auto">
                 <div class="col">
-                  <div class="time-card">
-                    <p class="text-counter">10</p>
+                  <div class="time-card animated" anim="slide-down" delay="1">
+                    <p class="text-counter" id="days">10</p>
                     <p>Days</p>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="time-card">
-                    <p class="text-counter">10</p>
+                <div class="col ">
+                  <div class="time-card animated" anim="slide-down" delay="1.2">
+                    <p class="text-counter" id="hours">10</p>
                     <p>Hours</p>
                   </div>
                 </div>
                 <div class="col">
-                  <div class="time-card">
-                    <p class="text-counter">10</p>
+                  <div class="time-card animated" anim="slide-down" delay="1.3">
+                    <p class="text-counter" id="minutes">10</p>
                     <p>Minutes</p>
                   </div>
                 </div>
                 <div class="col">
-                  <div class="time-card">
-                    <p class="text-counter">10</p>
+                  <div class="time-card animated" anim="slide-down" delay="1.4">
+                    <p class="text-counter" id="seconds">10</p>
                     <p>Seconds</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container-fluid section-7 text-center animated">
+          <div class="container-fluid section-7 text-center animated" anim="slide-down" delay="1">
             <h3>The Wedding Day</h3>
             <p>Save the date</p>
             <div class="container card-save-the-date">
@@ -576,16 +736,16 @@
               <a href="" class="view-maps">View Maps</a>
             </div>
           </div>
-          <div class="container-fluid section-9 text-center animated">
+          <div class="container-fluid section-9 text-center animated mb-5">
             <h4 id="instagram-wedding-filter">Instagram Wedding Filter</h4>
-            <p>
+            <p class="mb-3">
               Capture your moment while attending our wedding by using the
               Instagram filter below.
             </p>
             <a href="" class="btn-filter">Use Filter</a>
           </div>
           <div class="container-fluid section-10 text-center animated">
-            <p id="wedding-gift">Wedding Gift</p>
+            <h3 id="wedding-gift">Wedding Gift</h3>
             <p>
               Your blessing and coming to our wedding are enough for us.
               However, if you want to give a gift we provide a Digital Envelope
@@ -593,7 +753,9 @@
             </p>
             <div class="container">
               <div class="form-group">
-                <select name="" id="" class="form-select"></select>
+                <select name="" id="" class="form-select">
+                  <option value="">BCA</option>
+                </select>
               </div>
               <div class="form-group card-bank-info">
                 <div class="row o">
@@ -601,7 +763,10 @@
                     <p><b>BANK BCA (014)</b></p>
                     <p class="m-0">
                       <span>Account Number</span
-                      ><span><br /><b>232124214</b></span>
+                      ><span><br /><b>232124214</b></span
+                      ><span class="p-2"
+                        ><i class="fa fa-copy btn-copy"></i
+                      ></span>
                     </p>
                     <p class="m-0">
                       <span>Account Name</span><span><br /><b>Aliong</b></span>
@@ -613,48 +778,62 @@
             </div>
           </div>
           <div class="container-fluid section-11 text-center animated">
-            <h4>Protected Yourself And Other from Covid-19</h4>
+            <h3>Protected Yourself And Other from Covid-19</h3>
             <div class="container">
               <div class="row protocol-container mx-auto">
-                <div class="col"><div class="protocol-card">1</div></div>
                 <div class="col">
-                  <div class="protocol-card">2</div>
+                  <div class="protocol-card animated" anim="slide-left" delay="2">
+                    <img src="img/Distancing.svg" alt="" />
+                    <p>SOCIAL DISTANCING</p>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="protocol-card animated" anim="slide-right" delay="2.2">
+                    <img src="img/Mask.svg" alt="" />
+                    <p>WEARING A MASK</p>
+                  </div>
                 </div>
                 <div class="w-100"></div>
                 <div class="col">
-                  <div class="protocol-card">3</div>
+                  <div class="protocol-card animated" anim="slide-left" delay="2.4">
+                    <img src="img/Hand Sanitizer.svg" alt="" />
+                    <p>HAND YOUR HAND</p>
+                  </div>
                 </div>
                 <div class="col">
-                  <div class="protocol-card">4</div>
+                  <div class="protocol-card animated" anim="slide-right" delay="2.6">
+                    <img src="img/Temperatur Gun.svg" alt="" />
+                    <p>TEMPERATURE CHECK</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container-fluid section-12 text-center animated">
-            <h3>Wedding Wish</h3>
-            <div class="form-group">
-              <input type="text" placeholder="Nama" class="form-control" />
+          <div class="container-fluid section-12 text-center animated" anim="slide-right" delay="1">
+            <h3 class=" animated" anim="slide-right" delay="1.2">Wedding Wish</h3>
+            <div class="form-group"  class=" animated" anim="slide-right" delay="1.4">
+              <input type="text" placeholder="Nama" class="form-control animated" anim="slide-right" delay="1.6"/>
               <textarea
                 name=""
                 id=""
                 cols="30"
                 rows="4"
-                class="form-control"
+                class="form-control animated" anim="slide-right" delay="1.8"
               ></textarea>
-              <button class="btn">Kirim</button>
+              <button class="btn btn-send mb-3">Send</button>
             </div>
-            <div class="container-fluid container-chat text-start">
+            <div class="container-fluid container-chat text-start mb-5 animated" anim="slide-right" delay="1">
               <div class="row">
-                <p class="chat-subject">Santo</p>
-                <p class="chat-date">12 Feb 2023</p>
-                <p class="chat-message">Njir Selamat ya</p>
+                <p class="chat-subject animated" anim="slide-down" delay="1.3">Santo</p>
+                <p class="chat-date animated" anim="slide-down" delay="1.6">12 Feb 2023</p>
+                <p class="chat-message mb-2 animated" anim="slide-down" delay="1.9">Njir Selamat ya</p>
               </div>
             </div>
           </div>
           <div class="container-fluid section-13 text-center animated">
-            <div class="container-couple-end-text">
-              <p>May 04th 2024</p>
-              <h3>Aliong & Ling-ling</h3>
+            <div class="container-couple-end-text text-white">
+              <p class="animated" anim="slide-down" delay="1.3">May 04th 2024</p>
+              <h3 anim="slide-up" delay="1.4">Aliong & Ling-ling</h3>
             </div>
           </div>
         </div>
@@ -673,9 +852,16 @@
       }
       $(document).ready(function () {
         let currentindex = 0;
+
+        $(".btn-open").click(function(){
+          $(".container-cover").animate({
+            top: "-100%"
+          },"slow", function(){
+          })
+        })
         function inframechecker(elm, i) {
           var element = elm;
-          elm.attr("  ")
+          elm.attr("  ");
           // Calculate the element's position
           var elementTop = element.offset().top;
           var windowHeight = $(window).height();
@@ -684,6 +870,10 @@
           // Check if the element is in the viewport
           if (elementTop - scrollTop < windowHeight - 100) {
             currentindex += 1;
+
+            if (element.attr("delay") != undefined) {
+              element.css("animation-delay", element.attr("delay") + "s");
+            }
             if (element.attr("anim") != undefined) {
               element.addClass(element.attr("anim"));
             } else {
@@ -708,6 +898,43 @@
             inframechecker($(this), i);
           });
         });
+
+        
+
+        function updateCountdown() {
+          const targetDate = new Date("2024-09-26 18:24:00").getTime(); // Change this to your target date
+          const now = new Date().getTime();
+          const timeRemaining = targetDate - now;
+
+          if (timeRemaining <= 0) {
+            // The countdown has ended
+            $("#countdown").html(
+              "<div class='timer'><span>00</span><span class='label'>Days</span></div><div class='timer'><span>00</span><span class='label'>Hours</span></div><div class='timer'><span>00</span><span class='label'>Minutes</span></div><div class='timer'><span>00</span><span class='label'>Seconds</span></div>"
+            );
+            return;
+          }
+
+          const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+          // Update the HTML with the remaining time
+          $("#days").text(days.toString().padStart(2, "0"));
+          $("#hours").text(hours.toString().padStart(2, "0"));
+          $("#minutes").text(minutes.toString().padStart(2, "0"));
+          $("#seconds").text(seconds.toString().padStart(2, "0"));
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Initial call to set up the countdown
+        updateCountdown();
       });
     </script>
   </body>
