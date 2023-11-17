@@ -55,7 +55,7 @@
       }
 
       .container-text-cover {
-        bottom: 30%;
+        bottom: 10%;
         z-index: 200;
       }
 
@@ -158,6 +158,8 @@
       .img-galery-viewer {
         width: 100%;
         margin-bottom: 30px;
+        height: 600px;
+        object-fit: cover;
       }
 
       .text-hm {
@@ -181,10 +183,12 @@
         border-radius: 10px;
         padding-bottom: 10px;
         box-shadow: 0px 0px 30px -20px;
+        width: 100%;
+        margin: 0p;
       }
 
       .container-time .row {
-        width: 80%;
+        width: 100%;
       }
 
       .time-card p {
@@ -204,8 +208,10 @@
       /*Section 7 (The Wedding Days)*/
       .section-7 {
         padding: 40px;
-        background-image: url("img/backgroundTWD.jpeg");
-        color: white;
+        background-image: url("img/hand.png");
+        background-size: 179%;
+        background-position: 50%;
+        background-repeat: no-repeat;
       }
 
       .card-save-the-date {
@@ -370,9 +376,9 @@
       }
 
       .btn-open{
-        border: 1px solid white;
         color: white;
         border-radius: 30px;
+        background-color: rgb(64, 154, 108);
       }
 
       .couple-img-1{
@@ -406,6 +412,22 @@
         bottom: 10px;
         width: 80px;
       }
+
+      .shadow-gradient{
+        background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 49%, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%);
+      }
+
+
+      .iwf-img{
+        width: 400px;
+        height: 600px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 20px -20px black;
+      }
     </style>
   </head>
   <body>
@@ -414,7 +436,7 @@
         <div class="col-md-7 p-0 position-relative">
           
           <div class="container-cover">
-            <div class="box-shadow position-absolute" style="box-shadow: inset 0px 0px 100px 10px; width: 100%; height: 100%;z-index: 100;">
+            <div class="music-cont">
               <audio controls autoplay class="d-none" id="music-audio">
                 <source src="music/music2.mp3" type="audio/mpeg" />
                 Your browser does not support the audio element.
@@ -427,16 +449,19 @@
                 onclick="toggleMusic()"
               />
             </div>
+            <div anim="fades" class="animated box-shadow position-absolute shadow-gradient" style="width: 100%; height: 100%;z-index: 100;">
+             
+            </div>
             <img
               src="img/couple2.jpg"
               alt=""
-              class="couple-img-1 position-absolute"  style="filter: brightness(0.8);"
+              anim="fades" class="animated couple-img-1 position-absolute"  style="filter: brightness(0.8);"
             />
             
-            <div class="container position-absolute container-text-cover text-white p-5" > 
-              <h3 class="main-title c-1">Aliong & Ling - Ling</h3>
-              <h4 >Hai, Jude</h4>
-              <button class="btn btn-open">Open Invitation</button>
+            <div class="container position-absolute container-text-cover text-white  text-center p-5" > 
+              <h3 class="main-title c-1 animated" anim="slide-left">Aliong & Ling - Ling</h3>
+              <h4 class="animated" anim="slide-right" delay="4" >Hai, Jude</h4>
+              <button class="btn btn-open animated" anim="slide-up" delay="5">Open Invitation</button>
             </div>
           </div>
         </div>
@@ -459,11 +484,11 @@
           >
             <div class="container my-5">
               <h3 class="animated" anim="slide-up" delay="1">The Wedding of</h3>
-              <p class="animated" anim="slide-up" delay="2">
+              <p class="animated" anim="slide-up" delay="1.2">
                 The pleasure of your company is requested at the marriage of
               </p>
             </div>
-            <div class="row mt-2 animated" anim="slide-left" delay="3">
+            <div class="row mt-2 animated" anim="slide-left" delay="1.4">
               <div class="col-12 text-center">
                 <div
                   class="container-couple mx-auto animated"
@@ -495,7 +520,7 @@
           <div
             class="container-fluid section-3 text-center animated animated"
             anim="slide-down"
-            delay="2"
+            delay="1.6"
           >
             <p class="text-verse m-0">
               Dan dari rusuk yang diambil TUHAN Allah dari manusia itu,
@@ -623,7 +648,7 @@
                   <div class="row img-galery">
                     <div class="col">
                       <img
-                        class="img-select actived-select  animated" anim="slide-up" delay="1.4"
+                        class="img-select animated" anim="slide-up" delay="1.4"
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHRYy62oqA6_n558h6dsZK8Bk4q8OPz_Tcu9wyGL2tkN8Budd-PjoeIp1Bht_8sOTKyGs&usqp=CAU"
                         alt=""
                       />
@@ -713,18 +738,8 @@
               <h3>Saturday</h3>
               <p class="">May 04th, 2024</p>
             </div>
-          </div>
-          <div class="container-fluid section-8 text-center animated">
             <div class="akad-nikah twd-subtext">
               <h4>Akad Nikah</h4>
-              <p class="mx-auto">09:00 - 10:00</p>
-            </div>
-            <div class="resepsi twd-subtext">
-              <h4>Resepsi</h4>
-              <p class="mx-auto">09:00 - 10:00</p>
-            </div>
-            <div class="night-party twd-subtext">
-              <h4>Night Party</h4>
               <p class="mx-auto">09:00 - 10:00</p>
             </div>
             <div class="address">
@@ -735,9 +750,23 @@
               </p>
               <a href="" class="view-maps">View Maps</a>
             </div>
+            <div class="resepsi twd-subtext">
+              <h4>Resepsi</h4>
+              <p class="mx-auto">09:00 - 10:00</p>
+            </div>
+            <div class="address">
+              <p class="fw-bold">Sheraton Grand Jakarta Gandaria City Hotel</p>
+              <p>
+                Jalan Sultan Iskandar Muda , Kebayoran Lama Utara, Kecamatan
+                Kebayoran Baru Jakarta
+              </p>
+              <a href="" class="view-maps">View Maps</a>
+            </div>
+            
           </div>
-          <div class="container-fluid section-9 text-center animated mb-5">
+          <div class="container-fluid section-9 text-center animated mb-5 pt-3">
             <h4 id="instagram-wedding-filter">Instagram Wedding Filter</h4>
+            <img class='iwf-img animated'  src="https://live.staticflickr.com/5611/15432200529_d40727621d_z.jpg" alt="">
             <p class="mb-3">
               Capture your moment while attending our wedding by using the
               Instagram filter below.
@@ -820,7 +849,7 @@
                 rows="4"
                 class="form-control animated" anim="slide-right" delay="1.8"
               ></textarea>
-              <button class="btn btn-send mb-3">Send</button>
+              <button class="btn btn-send mb-3 animated" delay="2.0">Send</button>
             </div>
             <div class="container-fluid container-chat text-start mb-5 animated" anim="slide-right" delay="1">
               <div class="row">
@@ -872,7 +901,7 @@
             currentindex += 1;
 
             if (element.attr("delay") != undefined) {
-              element.css("animation-delay", element.attr("delay") + "s");
+              element.css("animation-delay",(parseFloat(element.attr("delay")*0.3)) + "s");
             }
             if (element.attr("anim") != undefined) {
               element.addClass(element.attr("anim"));
@@ -898,6 +927,14 @@
             inframechecker($(this), i);
           });
         });
+
+        $(".img-select").click(function(){
+          $(".img-select").each(function(){
+            $(this).removeClass("actived-select")
+          })
+          $(this).toggleClass("actived-select")
+          $(".img-galery-viewer").attr("src",$(this).attr("src"));
+        })
 
         
 
@@ -936,6 +973,31 @@
         // Initial call to set up the countdown
         updateCountdown();
       });
+    </script>
+    <script>
+               let toggleButton = document.getElementById("disk-player");
+         let audio = document.getElementById("music-audio");
+         
+         let hasPlay = false;
+
+         document.getElementById("open-invitation").addEventListener("click", function(){
+            audio.play();
+         })
+          window.addEventListener("scroll", function(){
+            if(hasPlay==false){
+              audio.play();
+              hasPlay=true;
+            }
+         })
+         function toggleMusic() {
+           if (audio.paused) {
+             audio.play();
+             toggleButton.classList.add("spining");
+           } else {
+             audio.pause();
+             toggleButton.classList.remove("spining");
+           }
+         }
     </script>
   </body>
 </html>
