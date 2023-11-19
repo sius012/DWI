@@ -35,12 +35,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="  css/mm-masonry.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/anim.css">
   </head>
     
    <style>
@@ -252,7 +252,10 @@
         backdrop-filter: blur(2px);
       }
       .pp{
-        width: 100%;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
       }
       .btn-primary {
         background-color: #ffffff12;
@@ -417,6 +420,9 @@
 	        animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
+  html::-webkit-scrollbar {
+  display: none;
+}
 
 
     </style>
@@ -431,7 +437,7 @@
     </audio>
      <img src="img/vinyl.png" alt="" id="disk-player" class='spining' onclick="toggleMusic()">
           <img src="img/img1.jpg" alt="" class="backdrop-main" />
-          <div class="container text-center title-container">
+          <div class="container text-center title-container animated" anim="slide-down">
             <h1 class="main-title" id="">Roby & Dika</h1>
             <h4 class="text-center date-title">Minggu, 25 Januari 2023</h4>
             <p>To: <br>Mr   </p>
@@ -484,7 +490,7 @@
         <div class="container-content">
           <!-- Title-->
           <div class="container ">
-            <div class="col-12 text-center position-relative p-0">
+            <div class="col-12 text-center position-relative p-0 animated" anim="fades">
               <img src="img/img7.png" alt="" style="width: 90%; margin-top: 2px;">
               <img src="img/img2.png" class="" width="300px"  />
               <div class="fade-in mb-3">
@@ -499,7 +505,7 @@
             </div>
           </div>
           <!-- image -->
-          <p class="fade-in p-4" style="text-align: center; margin-top: 100px">
+          <p class="fade-in p-4 animated" style="text-align: center; margin-top: 100px" anim="slide-up" delay="1">
             "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
             pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
             dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
@@ -508,14 +514,14 @@
             ayat 21)
           </p>
 
-          <p class="fade-in p-4" style="text-align: center">
+          <p class="fade-in p-4 animated" style="text-align: center" anim="slide-up" delay="2">
             Seraya memohon ridho Allah SWT, perkenankan kami mengundang
             Bapak/Ibu/Saudara/i untuk menyaksikan dan merestui pernikahan
             putra-putri kami
           </p>
-          <div class="container mt-4 p-5" style="border-radius: 10px">
+          <div class="container mt-4 p-5 animated" style="border-radius: 10px"anim="slide-left" delay="1">
             <div class="row">
-              <div class="col-12 text-center fade-in">
+              <div class="col-12 text-center fade-in animated" anim="slide-right" delay="1">
                 <div
                   class="container-couple position-relative"
                   style="margin-bottom: 50px"
@@ -534,9 +540,9 @@
                   />
                 </div>
 
-                <h4>Roby Simanjutak</h4>
-                <p>Putra dari bapak Romeo Simanjuntak</p>
-                <a href="" class="btn-instagram"><i class="fa fa-instagram mr-1 p-2" aria-hidden="true"></i><span class="d-inline m-2">Instagram</span></a>
+                <h4 class="animated" anim="slide-up" delay="1">Roby Simanjutak</h4>
+                <p class="animated" anim="slide-up">Putra dari bapak Romeo Simanjuntak</p>
+                <a href="" class="btn-instagram animated" anim="slide-down" anim=2><i class="fa fa-instagram mr-1 p-2" aria-hidden="true"></i><span class="d-inline m-2">Instagram</span></a>
               </div>
             </div>
           </div>
@@ -549,11 +555,11 @@
             </div>
           </div>
 
-          <div class="container p-5 mt-2">
+          <div class="container p-5 mt-2 animated" anime="slide-right" >
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <div
-                  class="container-couple position-relative"
+                  class="container-couple position-relative animated" anim="slide-right"
                   style="margin-bottom: 50px"
                 >
                   <img
@@ -569,13 +575,13 @@
                     style="right: -40px !important; left: unset"
                   />
                 </div>
-                <h4>Herdika Sembiring</h4>
-                <p>Putri dari bapak Arman Sembiring</p>
-                <a href="" class="btn-instagram"><i class="fa fa-instagram mr-1 p-2" aria-hidden="true"></i><span class="d-inline m-2">Instagram</span></a>
+                <h4 class="animated" anim="slide-left">Herdika Sembiring</h4>
+                <p class="animated" anim="slide-right">Putri dari bapak Arman Sembiring</p>
+                <a  anim="slide-up" href="" class="btn-instagram animated"><i class="fa fa-instagram mr-1 p-2" aria-hidden="true"></i><span class="d-inline m-2">Instagram</span></a>
               </div>
             </div>
           </div>
-          <div class="container mt-5">
+          <div class="container mt-5 animated" anim="slide-right">
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <h4>Saturday</h4>
@@ -584,7 +590,7 @@
             </div>
           </div>
 
-          <div class="container mt-5">
+          <div class="container mt-5 animated" anim="slide-up">
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <h3>Akad Nikah</h3>
@@ -600,7 +606,7 @@
             </div>
           </div>
 
-          <div class="container-fluid mt-5 m-0 p-3" style="border-radius: 40px">
+          <div class="container-fluid mt-5 m-0 p-3 animated" style="border-radius: 40px" anim="slide-right">
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <h3>Resepsi</h3>
@@ -616,7 +622,7 @@
             </div>
           </div>
 
-          <div class="container mt-5 animate__animated animate__bounce">
+          <div class="container mt-5 animated" anim="slide-left">
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <h3>Save the Date!</h3>
@@ -643,13 +649,14 @@
               </div>
             </div>
           </div>
-          <div class="row mt-5 justify-content-center">
+          <div class="row mt-5 justify-content-center animated" anim="slide-right">
             <div class="col-11  text-center  fade-in">
               <h2>Our Story</h2>
               <div
                 id="carouselExampleCaptions"
-                class="carousel slide"
+                class="carousel slide animated"
                 data-bs-ride="carousel"
+                anim="slide-up"
               >
                 <div class="carousel-indicators">
                   <button
@@ -734,7 +741,7 @@
                 </button>
               </div>
 
-              <p class="mt-4">
+              <p class="mt-4" animated='animated' anim="fades">
                 "Once in a while, right in the middle of an ordinary life,
                 love gives us a fairy tale."
               </p>
@@ -754,25 +761,25 @@
             <div class="row mt-5 justify-content-center">
               <div class="col-12 text-center fade-in">
                 <h3>Gallery</h3>
-                <div id="gallery">
-                  <img src="https://pixabay.com/get/gfaf166f3aee2150d84f4ebaaab9787b21a641aec927fd01da1ec6acf03f564e692509b3e3a94734751adba139b2bf8c8fa26def5827ad47ca7e1bfea3ee19d10_1280.jpg">
-                  <img src="https://pixabay.com/get/g0bae4ff29c44e20563c6789e4ad58f138e4cfd4ab14148c490dbb5831fdd8d63cd119c27b756aa503654414750867b51481453085d1c8b63736096e69dd7af39_1280.jpg">
-                  <img src="https://pixabay.com/get/g7f166f6826da2ad4f50350d5bbdbf0a2894b2c384fa20a9cf7aabdc2e6529bb3cf6f67791151c1acc49724a473f727fe9340d031bdf6ecd7fc4f437d9b5173db_1280.jpg">
-                  <img src="https://pixabay.com/get/ga35ef6d47609d2c2161d5d88a5c05ce4279e908e2741c06ce22d64058734f9c7cd3676c806e6d63e6f642b5a55c3d5923341db30228bc8119b4b37712829584c_1280.jpg">
-                  <img src="https://pixabay.com/get/g24093cadfa8c00c9a50a9b774788637aee6e1c7359bc19e6e45d4bb0a8b5c5d3e4b6640edbde89c1c7e867d6193e00da874ed0368b97f1e12e8c62a628448385_1280.jpg">
-                  <img src="https://pixabay.com/get/g92c7b31aa5856687a46ffccc15395967549d576dbcf02b421e4ca2e0d8ffe494ec5f1a0d3272f56800380d424af46f6eaa13d884d3da1e2065b6f7e29354c28b_1280.jpg">
-                  <img src="https://pixabay.com/get/g05924d0c62650cf2d66462f41d44494d1c897207c8a013d00702936fd5cd290b900a3880fe685819ec79833159685bff8f7e525f8284a91d255f271149a1fd6d_1280.jpg">
-                  <img src="https://pixabay.com/get/g2798907cdc94c055cd1fa030d5db5959a11e1f9e08f5963be96c352336ce2dce31e163911680ba478bb391bb2f9e5db437c4154275677c1a8ed9d6a5af0c37fa_1280.jpg" alt="">
+                <div id="gallery" class="animated" anim="slide-right">
+                  <img src="https://th.bing.com/th/id/R.3fea078f720a09d723dd7de6ac535f61?rik=EEIRT4htflWyYw&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2fwedding-couple-on-beach-wide.jpg&ehk=QrXxBkdE5gz9GYFFd4U4Bm%2bI2lr1kTZ54%2bYtk57Z0Is%3d&risl=&pid=ImgRaw&r=0">
+                  <img src="https://images.squarespace-cdn.com/content/v1/57695486ebbd1a6611e9722c/1557639222956-KIPJR8RNP7RTJH6SLUEO/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/AR1A1683.jpg">
+                  <img src="https://th.bing.com/th/id/R.6ae5a1cc2b55e54ab8a2a16fcdbcab71?rik=aq7hbRlPlF1UjA&riu=http%3a%2f%2fwww.dipakstudios.com%2fgallery%2f1535303839A36I7935-Edit.jpg&ehk=7q3RqrSN2qsCJ0rBBv3DpZfLGbCL6gnGL4mwPibsItU%3d&risl=&pid=ImgRaw&r=0">
+                  <img src="https://th.bing.com/th/id/R.6ae5a1cc2b55e54ab8a2a16fcdbcab71?rik=aq7hbRlPlF1UjA&riu=http%3a%2f%2fwww.dipakstudios.com%2fgallery%2f1535303839A36I7935-Edit.jpg&ehk=7q3RqrSN2qsCJ0rBBv3DpZfLGbCL6gnGL4mwPibsItU%3d&risl=&pid=ImgRaw&r=0">
+                  <img src="https://th.bing.com/th/id/R.61b7b371c05db2842fdb05f5429c9e38?rik=dcoHDimiIKcYbA&riu=http%3a%2f%2fwww.stcharbel.org.au%2fwp-content%2fuploads%2f2011%2f06%2fBeach_wedding_couple.jpg&ehk=iJEDwlHfFkrVJk4uN63Zs9unnFaJAF2jWczsAD0b5vo%3d&risl=&pid=ImgRaw&r=0">
+                  <img src="https://th.bing.com/th/id/R.61b7b371c05db2842fdb05f5429c9e38?rik=dcoHDimiIKcYbA&riu=http%3a%2f%2fwww.stcharbel.org.au%2fwp-content%2fuploads%2f2011%2f06%2fBeach_wedding_couple.jpg&ehk=iJEDwlHfFkrVJk4uN63Zs9unnFaJAF2jWczsAD0b5vo%3d&risl=&pid=ImgRaw&r=0">
+                  <img src="https://th.bing.com/th/id/OIP.EeKUQXmUIARHvlVb5OphFQHaLH?w=650&h=976&rs=1&pid=ImgDetMain">
+                  <img src="https://images.squarespace-cdn.com/content/v1/5272a5f5e4b03e87bf90faa9/1546889826360-WQIXL1Z55CL658W22AJX/costa-rica-destination-wedding-quepos-audrey%26daniel_0052.jpg" alt="">
                 </div>        
               </div>
             </div>
           </div>
 
-          <div class="container-fluid mt-5">
+          <div class="container-fluid mt-5 animated" anim="slide-right">
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <h2>Live Streaming</h2>
-                <p>Please join and watch us become husband & wife</p>
+                <p class="animated" anim="slide-right">Please join and watch us become husband & wife</p>
                 <div class=" mb-5">
                   <iframe
                     src="https://www.youtube.com/embed/fq2CdnfijhQ?si=CmFUDx_bUivvWhML"
@@ -786,10 +793,10 @@
             </div>
           </div>
 
-          <div class="row m-3" style="background-color: rgb(0, 59, 43); color: white;border-radius: 50px;" id="instagram-weeding-filer">
+          <div class="row m-3 animated" anim="slide-right" style="background-color: rgb(0, 59, 43); color: white;border-radius: 50px;" id="instagram-weeding-filer">
             <div class="col-12 p-3 text-center">
-              <h1 style="color: white; font-size: 30pt;" class="p-2">Instagram Wedding Filter</h1>
-              <p class="p-3">Dapatkan momen terbaik anda ketika datang di acara pernikahan kami dengan menggunakan filter instagram</p>
+              <h1 style="color: white; font-size: 30pt;" class="p-2 animated" anim="slide-up">Instagram Wedding Filter</h1>
+              <p class="p-3 animated" anim="slide-right">Dapatkan momen terbaik anda ketika datang di acara pernikahan kami dengan menggunakan filter instagram</p>
               <img style="width: 300px;border-radius: 30px;" src="https://th.bing.com/th/id/OIP.MuuiYhqEUO-bxxaqHusrCAHaKK?w=188&h=258&c=7&r=0&o=5&pid=1.7" alt="">
               <div class="row mt-2 justify-content-center">
                 <div class="col-md-3">
@@ -803,18 +810,18 @@
           </div>
           <div class="row mt-5">
             <div class="col-12 text-center fade-in">
-              <h2>Protokol Kesehatan</h2>
+              <h2 class="animated" anim="slide-up">Protokol Kesehatan</h2>
               <div class="container protocol-card-container">
                 <div class="row">
                   <div class="col-6">
-                    <div class="protocol-card">
+                    <div class="protocol-card animated" anim="slide-left">
                       <img src="img/distance.png" alt="">
                      <h6 class="mt-2">Jaga Jarak</h6>
                     </div>
                   </div>
                   <div class="col-6">
    
-                      <div class="protocol-card">
+                      <div class="protocol-card animated" anim="slide-right">
                         <img src="img/mask.png" alt="">
                        <h6 class="mt-2">Memakai Masker</h6>
                       </div>
@@ -822,13 +829,13 @@
                   </div>
                   <div class="w-100"></div>
                   <div class="col-6">
-                    <div class="protocol-card">
+                    <div class="protocol-card animated" anim="slide-left">
                       <img src="img/hand-sanitizer.png" alt="">
                      <h6 class="mt-2">Memamaki Hand Sanitizer</h6>
                     </div>
                   </div>
                   <div class="col-6">
-                     <div class="protocol-card">
+                     <div class="protocol-card animated" anim="slide-right">
                         <img src="img/mask.png" alt="">
                        <h6 class="mt-3">Cek temperatur</h6>
                       </div>
@@ -837,17 +844,17 @@
               </div>
             </div>
           </div>
-          <div class="container mt-5">
+          <div class="container mt-5 animated" anim="slide-right">
             <div class="row">
               <div class="col-12 text-center fade-in">
-                <h3>Wedding Gift</h3>
-                <p class="mt-4">
+                <h3 class="animated" anim="slide-left">Wedding Gift</h3>
+                <p class="mt-4 animated" anim="slide-right">
                   Your blessing and coming to our wedding are enough for us.
                   However, if you want to give a gift we provide a Digital
                   Envelope to make it easier for you. thank you
                 </p>
 
-                <div class="container p-3">
+                <div class="container p-3 animated" anim="slide-right">
                   <div class="form-group">
                     <select name="" id="" class="form-select">
                       <option value="">BCA</option>
@@ -862,7 +869,7 @@
               </div>
             </div>
           </div>
-          <div class="container mt-5">
+          <div class="container mt-5 animated" anim="slide-up">
             <div class="row">
               <div class="col-12 text-center fade-in">
                 <h3 class="fade-in mb-3">Wedding Wish</h3>
@@ -886,18 +893,27 @@
               </div>
             </div>
           </div>
-          <div class="container p-4">
-            <div class="row chat-row" >
+          <div class="container p-4 animated" anim="slide-right" style="height: 300px; overflow-y: scroll;">
+            <div class="row chat-row mb-2 animated" anim="slide-down" >
                 <div class="col-2 text-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg" alt="" class="pp">
+                  <img src="img/img2.jpg" alt="" class="pp">
                 </div>
                 <div class="col-10">
                   <span>Dionisius Hermawan</span>
                   <p class="chat-bubble">Selamat mas Bro....</p>
                 </div>
             </div>
+            <div class="row chat-row mb-2 animated" anim="slide-down" >
+              <div class="col-2 text-center">
+                <img src="img/img2.jpg" alt="" class="pp">
+              </div>
+              <div class="col-10">
+                <span>Dionisius Hermawan</span>
+                <p class="chat-bubble">Selamat mas Bro....</p>
+              </div>
           </div>
-          <div class="row">
+          </div>
+          <div class="row animated" anim='slide-up'>
             <div class="col-12 text-center fade-in">
               <p class="mt-4">Wedding Invitation</p>
               <h1 class="fade-in mb-3">Roby & Dika</h1>
@@ -1058,36 +1074,7 @@
           );
         }
 
-        $(window).scroll(function () {
-          checkAnimations();
-          console.log($(".gallery-container"));
-          $(".container-couple").each(function(){
-            if(isElementInViewports($(this))){
-              if (!$(this).hasClass("rotate-image")) {
-               $(this).addClass("rotate-image");
-             }
-            }
-          })
-          if (isElementInViewports($("#gallery"))) {
-            $("#gallery").children("img").each(function(){
-              if (!$(this).hasClass("img-gallery-trans2")) {
-               $(this).addClass("image-gallery-trans2");
-               }
-            })
-              
-          } else {
-          }
 
-          if(isElementInViewports($(".protocol-card-container"))){
-            $(".protocol-card-container").children(".row").children(".col-6").each(function(){
-              if (!$(this).find(".protocol-card").hasClass("image-gallery-trans")) {
-               
-                  $(this).find(".protocol-card").addClass("image-gallery-trans");
-                }
-            })
-          }else{
-          }
-        });
 
         $("#open-invitation").click(function () {
           $("#content-main").show();
@@ -1163,6 +1150,49 @@ setInterval(updateCountdown, 1000);
 // Initial call to set up the countdown
 updateCountdown();
 
+      })
+    </script>
+
+    <script>
+       function inframechecker(elm, i) {
+          var element = elm;
+          elm.attr("  ");
+          // Calculate the element's position
+          var elementTop = element.offset().top;
+          var windowHeight = $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // Check if the element is in the viewport
+          if (elementTop - scrollTop < windowHeight - 100) {
+    
+
+            if (element.attr("delay") != undefined) {
+              element.css("animation-delay",(parseFloat(element.attr("delay")*0.3)) + "s");
+            }
+            if (element.attr("anim") != undefined) {
+              element.addClass(element.attr("anim"));
+            } else {
+              element.addClass("fades");
+            }
+          } else {
+            currentindex = 0;
+            // Remove the class if the element is not in the viewport
+          }
+        }
+      $(document).ready(function(){
+        $(".animated").each(function (i) {
+          inframechecker($(this), i);
+        });
+
+        $(".animated").on("animationend", function (e) {
+          $(e.target).css("opacity", 1);
+        });
+        $(window).on("scroll", function () {
+          // Get the element you want to animate
+          $(".animated").each(function (i) {
+            inframechecker($(this), i);
+          });
+        });
       })
     </script>
   </body>
