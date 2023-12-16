@@ -76,7 +76,6 @@
         color: white;
         height: 100vh;
         padding-top: 30%;
-        background: url("img/couple1.jpg");
       }
 
       /*Section Weeding Of*/
@@ -111,6 +110,7 @@
       .section-3 {
         color: white;
         background-color: rgb(87, 103, 79);
+        backdrop-filter: brightness(60%);
       }
 
       .text-verse {
@@ -436,7 +436,7 @@
         position: fixed;
         left: 10px;
         bottom: 10px;
-        width: 80px;
+        width: 50px;
       }
 
       .shadow-gradient{
@@ -458,6 +458,17 @@
       html::-webkit-scrollbar {
         display: none;
       }
+
+      .btn-submit-rsvp{
+        border: 0px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 8px;
+        border-radius: 10px;
+        background: rgb(189, 165, 146);
+        color: white  ;
+        transition: .2s;
+      }
     </style>
   </head>
   <body>
@@ -466,19 +477,7 @@
         <div class="col-md-7 p-0 position-relative">
           
           <div class="container-cover">
-            <div class="music-cont">
-              <audio controls autoplay class="d-none" id="music-audio">
-                <source src="music/music2.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-              <img
-                src="img/vinyl.png"
-                alt=""
-                id="disk-player"
-                class="spining"
-                onclick="toggleMusic()"
-              />
-            </div>
+        
             <div anim="fades" class="animated box-shadow position-absolute shadow-gradient" style="width: 100%; height: 100%;z-index: 100;">
              
             </div>
@@ -496,10 +495,15 @@
           </div>
         </div>
         <div class="col-md-5 p-0" style="background-color: whitesmoke">
+         
           <div
-            class="container-fluid section-1 text-center animated"
-            anim="slide-up"
+            class="container-fluid section-1 text-center animated p-0 position-relative "
+            anim="slide-up" style="width: 100%;"
           >
+          <div class="container-fluid p-0" style="left: 0px;height: 100%;">
+            <img src="img/couple1.jpg" alt="" style="height: 100%; filter: brightness(0.6);">
+          </div>
+          <div class="container-fluid position-absolute" style="left: 0px;top:40%">
             <h3 class="animated" anim="slide-up" delay="2">
               Wedding Invitation
             </h3>
@@ -507,6 +511,8 @@
               Aliong & Ling - Ling
             </h3>
             <p class=" animated" anim="slide-down" delay="4">May 404th, 2024</p>
+          </div>
+            
           </div>
           <div
             class="container-fluid section-2 text-center animated"
@@ -782,6 +788,21 @@
               </div>
             </div>
           </div>
+
+          <div class="section-9c row text-center animated" anim="slide-up" >
+            <div class="col-md-12">
+              <div class="container-fluid my-5 container-rsvp p-3">
+                <h3 class="section-title">RSVP</h3>
+                <div class="container">
+                  <form action="">
+                    <p for="" class="mb-2 text-">Masukan Jumlah orang</p>
+                    <input type="text" class="form-control" />
+                    <button type="submit" class="btn-submit-rsvp">Kirim</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="container-fluid section-7 text-center animated" anim="slide-down" delay="1">
             <h3>The Wedding Day</h3>
             <p>Save the date</p>
@@ -819,7 +840,7 @@
             <h4 id="instagram-wedding-filter">Instagram Wedding Filter</h4>
             <div class="row text-center">
               <div class="col-12">
-                <img class='iwf-img animated'  src="https://live.staticflickr.com/5611/15432200529_d40727621d_z.jpg" alt="">
+                <img class='iwf-img animated'  src="img/couple1.jpg" alt="">
               </div>
             </div>
             
@@ -828,6 +849,21 @@
               Instagram filter below.
             </p>
             <a href="" class="btn-filter">Use Filter</a>
+          </div>
+
+          <div class="section-10 row text-center my-5 animated">
+            <div class="col-12">
+              <h3 class="my-5 section-title">Live Streaming</h3>
+              <iframe
+                style="width: 80%; border-radius: 30px"
+                height="315"
+                src="https://www.youtube.com/embed/64ojWgAzl94?si=8SbvRLyWHDAZZnw-"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
           <div class="container-fluid section-10 text-center animated">
             <h3 id="wedding-gift">Wedding Gift</h3>

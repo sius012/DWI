@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+      integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../template-3/css/anim.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Viaoda+Libre&display=swap");
+      .container-cover {
+        position: fixed;
+        width: inherit;
+        height: 100vh;
+      }
+
+      .container-text {
+        color: white;
+        bottom: 100px;
+        left: 80px;
+      }
+
+      .container-text h3 {
+        font-size: 60pt;
+      }
+
+      .section-1 {
+      }
+
+      .container-content {
+        background-color: rgb(255, 249, 243);
+      }
+
+      h3 {
+        font-family: "Bonheur Royale", cursive;
+      }
+      p,
+      button,
+      a,
+      h5 {
+        font-family: "EB Garamond", serif;
+      }
+
+      .couple-title {
+        font-size: 30pt;
+      }
+
+      .two-text {
+        font-family: "Viaoda Libre", serif;
+      }
+
+      .couple-img img {
+        width: 96%;
+        height: 96%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid white;
+      }
+
+      .couple-img {
+        background-image: url("img/batik8.jpg");
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      .btn-instagram,
+      .btn-filter {
+        color: white;
+        background-color: rgb(87, 23, 23);
+        padding: 10px;
+        border-radius: 20px;
+        transition: 0.2s;
+        text-decoration: none;
+        width: 80%;
+      }
+
+      .btn-instagram:hover {
+        background-color: white;
+        color: rgb(87, 23, 23);
+        box-shadow: 0px 0px 5px -3px black;
+      }
+
+      .section-5,
+      .section-9 {
+        background-color: rgb(87, 23, 23);
+        color: white;
+      }
+
+      .cont-date div {
+        background-color: white;
+        margin: 10px;
+        border-radius: 20px 0px;
+        height: 100px;
+        color: black;
+      }
+
+      .cont-date div p {
+        font-size: 30pt;
+        margin: 0px;
+      }
+
+      .img-os {
+        height: 80%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .view-map {
+        background-color: white;
+        padding: 10px;
+        color: rgb(87, 23, 23);
+        text-decoration: none;
+        display: block;
+        width: 100px;
+        border-radius: 10px;
+      }
+
+      .ls-button,
+      .filter-btn {
+        background-color: rgb(87, 23, 23);
+        text-decoration: none;
+        padding: 10px;
+        width: 100%;
+        display: block;
+        color: white;
+        border-radius: 30px;
+      }
+
+      .iwf-img {
+        height: 400px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .filter-btn {
+        background-color: rgb(87, 23, 23);
+        width: 200px;
+        text-decoration: none;
+        border-radius: 20px;
+      }
+      .cont-bank {
+        background-color: white;
+      }
+      .cont-bank-account {
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .protocol-card {
+        border: 2px solid black;
+        border-radius: 20px;
+        padding-top: 50px;
+        padding-bottom: 40px;
+        height: 200px;
+      }
+
+      .protocol-card img {
+        width: 50px;
+        margin-bottom: 20px;
+      }
+
+      .section-14 {
+        background-color: rgba(197, 223, 197, 0.435);
+      }
+
+      .btn-wish-send {
+        background-color: rgba(58, 86, 56, 0.482);
+        border: 0px;
+        padding: 10px;
+        color: white;
+        border-radius: 40px;
+      }
+
+      .text-name {
+        color: rgb(7, 109, 89);
+        margin: 0px;
+        font-size: 10pt;
+      }
+
+      .text-date-message {
+        color: rgb(110, 121, 116);
+        margin: 0px;
+      }
+
+      .row-message {
+        border-bottom: 2px solid white;
+        margin: 0px;
+        padding-top: 20px;
+      }
+
+      .section-15 {
+        background-color: rgb(47, 64, 48);
+        color: white;
+      }
+
+      .gradient {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.3925945378151261) 0%,
+          rgba(0, 0, 0, 0) 65%,
+          rgba(0, 0, 0, 0.6755077030812324) 100%
+        );
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      .container-cover {
+        z-index: 20;
+      }
+
+      .btn-open {
+        border: none;
+        background-color: rgb(87, 23, 23);
+        padding: 10px;
+        color: white;
+        border-radius: 40px;
+        width: 75%;
+        display: none;
+      }
+
+      @media screen and (max-width: 762px) {
+        .btn-open {
+          display: block;
+        }
+        .container-cover {
+          text-align: center;
+        }
+        .container-text {
+          left: 0px;
+          bottom: 200px;
+        }
+
+        .container-text h3 {
+          font-size: 100px;
+        }
+      }
+
+      .section-title {
+        font-family: "Viaoda Libre", serif;
+      }
+
+      html {
+        overflow-x: hidden;
+      }
+      .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+      }
+
+      html::-webkit-scrollbar {
+        display: none;
+      }
+      .container-chat::-webkit-scrollbar {
+        display: none;
+      }
+      .container-rsvp {
+        background-color: rgb(80, 18, 18);
+        color: white;
+        border-radius: 30px;
+      }
+      .btn-submit-rsvp {
+        border: none;
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        color: rgb(80, 18, 18);
+      }
+
+      #disk-player {
+        z-index: 200;
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row" style="min-height: 100vh">
+        <div
+          class="col-md-7 p-0 position-relative"
+          style="background-color: whitesmoke"
+        >
+          <div class="container-cover p-0">
+            <div class="music-cont">
+              <audio controls autoplay class="d-none" id="music-audio">
+                <source src="music/music2.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+              <img
+                src="img/vinyl.png"
+                alt=""
+                id="disk-player"
+                class="spining"
+                onclick="toggleMusic()"
+              />
+            </div>
+            <div class="gradient"></div>
+            <div
+              class="container-bg position-absolute aanimated"
+              style="width: 100%; height: 100%"
+            >
+              <img
+                class="m-0"
+                src="img/img1.jpg"
+                alt=""
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <div class="gradient"></div>
+            <div
+              class="container-text animated"
+              anime="slide-up"
+              style="position: absolute"
+            >
+              <h3>Calvin & Angel</h3>
+              <p>Hai Dhera</p>
+              <button class="btn-open mx-auto">Open Invitation</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 container-content mb-3">
+          <div class="section-1 row text-center animated">
+            <div class="col-12">
+              <img
+                src="img/ornament-grid.png"
+                alt=""
+                style="width: 100%; transform: translateY(-25px)"
+              />
+              <p>Wedding Invitation</p>
+              <img
+                src="img/img1.jpg"
+                alt=""
+                style="
+                  width: 100%;
+                  box-shadow: 0px 0px 500px;
+                  clip-path: polygon(
+                    0% 15%,
+                    15% 15%,
+                    15% 0%,
+                    85% 0%,
+                    85% 15%,
+                    100% 15%,
+                    100% 85%,
+                    85% 85%,
+                    85% 100%,
+                    15% 100%,
+                    15% 85%,
+                    0% 85%
+                  );
+                "
+              />
+              <p class="mt-5">#TogeTher</p>
+              <h3 class="couple-title">Calvin & Angel</h3>
+              <p>January 28th, 2023</p>
+            </div>
+          </div>
+          <div class="section-2 row text-center mt-2 animated">
+            <img
+              src="img/ornament-grid.png"
+              alt=""
+              style="width: 100%; transform: translateY(-25px)"
+              class="my-5"
+            />
+            <h3 class="two-text animated" anim="slide-up">The Wedding of</h3>
+            <p class="animated" anim="slide-down">
+              The pleasure of your company is requested at the marriage of
+            </p>
+          </div>
+          <div class="section-3 row text-center animated">
+            <div class="col-12">
+              <div
+                class="couple-img my-5 mx-auto d-flex animated"
+                anim="slide-left"
+              >
+                <img src="img/groom.png" alt="" class="my-auto mx-auto" />
+              </div>
+              <div class="container animated" anim="slide-up">
+                <h3 class="h3 text-couple">Calvin Sanjaya</h3>
+                <p>The son of Mr. Tano Sanjaya & Mrs. Frida Kumalasari</p>
+                <a href="" class="btn-instagram mx-auto"
+                  ><i class="fa fa-instagram"></i>@calvin12</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="section-4 row text-center mb-5 animated">
+            <div class="col-12">
+              <div
+                class="couple-img my-5 mx-auto d-flex animated"
+                anim="slide-left"
+              >
+                <img src="img/bride.png" alt="" class="my-auto mx-auto" />
+              </div>
+              <div class="container animated" anim="slide-up">
+                <h3 class="h3 text-couple">Angelica Wijaya</h3>
+                <p>The daughter of Mr. Afung & Mrs. Afiu</p>
+                <a href="" class="btn-instagram mx-auto"
+                  ><i class="fa fa-instagram"></i>@calvin12</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="section-5 row text-center my-5 animated pt-5">
+            <div class="col-12 position-relative p-0">
+              <img
+                src="img/ornament-grid2.png"
+                alt=""
+                style="width: 100%; transform: translateY(-90%)"
+                class=""
+              />
+              <h3 class="std-text">Save The Date</h3>
+              <p>January 28th, 2023</p>
+              <div class="container">
+                <div class="row cont-date mx-auto">
+                  <div class="col animated" anim="slide-up">
+                    <p id="days">0</p>
+                    <span>Days</span>
+                  </div>
+                  <div class="col animated" anim="slide-down">
+                    <p id="hours">0</p>
+                    <span>Hours</span>
+                  </div>
+                  <div class="col animated" anim="slide-up">
+                    <p id="minutes">0</p>
+                    <span>Minutes</span>
+                  </div>
+                  <div class="col animated" anim="slide-down">
+                    <p id="seconds">0</p>
+                    <span>Seconds</span>
+                  </div>
+                </div>
+              </div>
+              <img
+                src="img/ornament-grid2.png"
+                alt=""
+                style="width: 100%; transform: translateY(90%)"
+                class=""
+              />
+            </div>
+          </div>
+          <div class="section-6 row text-center animated">
+            <div class="col 12">
+              <h3 class="os-text section-title">Our Story</h3>
+              <div class="row animated" anim="slide-left">
+                <div class="col-6" style="height: 300px">
+                  <img
+                    src="img/img4.jpg"
+                    alt=""
+                    class="img-os"
+                    style="width: 100%"
+                  />
+                </div>
+                <div class="col-6 text-start">
+                  <h5 class="o-text">Our Memories</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Reprehenderit, iure. Quam natus accusantium laborum illum
+                    quaerat repellat neque, porro officia.
+                  </p>
+                </div>
+              </div>
+              <div class="row animated" anim="slide-right">
+                <div class="col-6" style="height: 300px">
+                  <img
+                    src="img/img4.jpg"
+                    alt=""
+                    style="width: 100%"
+                    class="img-os"
+                  />
+                </div>
+                <div class="col-6 text-start">
+                  <h5 class="o-text">Our Journey</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Reprehenderit, iure. Quam natus accusantium laborum illum
+                    quaerat repellat neque, porro officia.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-7 row text-center animated">
+            <img
+              src="img/ornament-grid2.png"
+              class="my-5 mb-5 animated"
+              anim="slide-down"
+              alt=""
+            />
+            <div class="col-12">
+              <h3 class="section-title">Prewedding</h3>
+              <video
+                style="width: 80%"
+                controls
+                class="animated"
+                anim="slide-up"
+              >
+                <source src="img/prewedding.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div class="section-8 row text-center animated">
+            <div class="col-12">
+              <h3 class="my-5 section-title">Galery</h3>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <img src="img/img1.jpg" alt="" style="width: 100%" />
+                  </div>
+                  <div class="col">
+                    <img src="img/img1.jpg" alt="" style="width: 100%" />
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div
+                    id="carouselExampleControls"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                  >
+                    <div class="carousel-inner" style="height: 100%">
+                      <div class="carousel-item active">
+                        <img
+                          src="img/img1.jpg"
+                          class="d-block w-100"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="img/img4.jpg"
+                          class="d-block w-100"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="img/img5.jpg"
+                          class="d-block w-100"
+                          alt="..."
+                        />
+                      </div>
+                    </div>
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carouselExampleControls"
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carouselExampleControls"
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-9 row text-center my-5 animated">
+            <div class="col-12 p-0">
+              <img
+                src="img/ornament-grid2.png"
+                class="w-100"
+                alt=""
+                style="transform: translateY(-90%)"
+              />
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="animated section-title" anim="slide-up">
+                    It's Wedding Day
+                  </h3>
+                  <p class="mb-5">save the date</p>
+                </div>
+              </div>
+              <div
+                class="row py-3 animated"
+                anim="slide-down"
+                style="border: 0.2px solid white"
+              >
+                <div class="col-12">
+                  <h3>Saturday</h3>
+                  <h3>January 28th, 2023</h3>
+                </div>
+              </div>
+              <div class="row animated" anim="slide-down">
+                <div class="col-12">
+                  <div class="row p-5">
+                    <div class="col-12">
+                      <img src="img/ring.png" alt="" style="width: 100px" />
+                      <h3>Akad Nikah</h3>
+                      <p>09:00 - 10:00</p>
+                      <img src="img/ic-maps.png" style="width: 30px" alt="" />
+                      <p>
+                        JW Marriott <br />
+                        Jakarta JW Marriott Jkt, Kuningan, Kuningan Tim.,
+                        Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
+                        Ibukota Jakarta, Indonesia Kota Jakarta Selatan
+                      </p>
+                      <a href="" class="view-map mx-auto">View Map</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row animated" anim="slide-left">
+                <div class="col-12">
+                  <div class="row p-5">
+                    <div class="col-12">
+                      <img src="img/resepsi.png" alt="" style="width: 100px" />
+                      <h3>Akad Nikah</h3>
+                      <p>09:00 - 10:00</p>
+                      <img src="img/ic-maps.png" style="width: 30px" alt="" />
+                      <p>
+                        JW Marriott <br />
+                        Jakarta JW Marriott Jkt, Kuningan, Kuningan Tim.,
+                        Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
+                        Ibukota Jakarta, Indonesia Kota Jakarta Selatan
+                      </p>
+                      <a href="" class="view-map mx-auto">View Map</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="row py-4 my-5 animated"
+                anim="slide-right"
+                style="border: 1px solid rgba(255, 255, 255, 0.49)"
+              >
+                <div class="col-12">
+                  <h3>Thursday</h3>
+                  <h3>June 29th, 2023</h3>
+                </div>
+              </div>
+              <div class="row my-5">
+                <div class="col-12">
+                  <img src="img/ring.png" style="width: 100px" alt="" />
+                  <h3 class="animated" anim="slide-up">Ngunduh mantu</h3>
+                  <p>09:45 - 21:00</p>
+                </div>
+              </div>
+              <div class="row mb-5 p-5 animated" anim="slide-right">
+                <div class="col-12">
+                  <img src="img/ic-maps.png" style="width: 30px" alt="" />
+                  <p style="">
+                    Four Seasons Jakarta <br />
+                    Jl. Gatot Subroto No.18, Kuningan Bar., Kec. Mampang Prpt.,
+                    Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12710,
+                    Indonesia <br /><span>Kota Jakarta Selatan</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row animated" anim="slide-up">
+                <div class="col-12">
+                  <p style="width: 80%" class="mx-auto">
+                    “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+                    menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+                    agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
+                    menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada
+                    demikian itu benar-benar terdapat tanda-tanda (kebesaran
+                    Allah) bagi kaum yang berpikir.”
+                    <br />
+                    (QS. Ar-Rum ayat 21)
+                  </p>
+                </div>
+              </div>
+              <img
+                src="img/ornament-grid2.png"
+                alt=""
+                style="width: 100%; transform: translateY(90%)"
+              />
+            </div>
+          </div>
+          <div class="section-9c row text-center">
+            <div class="col-md-12">
+              <div class="container-fluid my-5 container-rsvp p-3">
+                <h3 class="section-title">RSVP</h3>
+                <div class="container">
+                  <form action="">
+                    <p for="" class="mb-2 text-">Masukan Jumlah orang</p>
+                    <input type="text" class="form-control" />
+                    <button type="submit" class="btn-submit-rsvp">Kirim</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-10 row text-center my-5 animated">
+            <div class="col-12">
+              <h3 class="my-5 section-title">Live Streaming</h3>
+              <iframe
+                style="width: 80%; border-radius: 30px"
+                height="315"
+                src="https://www.youtube.com/embed/64ojWgAzl94?si=8SbvRLyWHDAZZnw-"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="section-11 row text-center my-5 animated">
+            <div class="col-12">
+              <h3 class="animated section-title" anim="slide-up">
+                Instagram Wedding Filter
+              </h3>
+              <p>
+                Dikarenakan situasi pandemi saat ini, kami memohon maaf atas
+                keterbatasan undangan dan tidak dapat mengundang untuk
+                menghadiri/menyaksikan prosesi Akad Nikah secara langsung.
+                Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i
+                dapat menghadiri/menyaksikan prosesi Akad Nikah kami melalui
+                live streaming di bawah ini Atas kehadiran dan do'a restu
+                Bapak/Ibu/Saudara/i kami ucapkan terima kasih.
+              </p>
+              <img src="img/img1.jpg" style="width: 80%" class="iwf-img" />
+              <div class="row">
+                <a href="" class="btn-filter mx-auto my-3">Use Filter</a>
+              </div>
+            </div>
+          </div>
+          <div class="section-12 row text-center my-5">
+            <div class="col-12">
+              <h3 class="my-3 section-title animated" anim="slide-down">
+                Wedding Gift
+              </h3>
+              <p>
+                Your blessing and coming to our wedding are enough for us.
+                However, if you want to give a gift we provide a Digital
+                Envelope to make it easier for you. thank you
+              </p>
+              <div class="container cont-bank p-4">
+                <div class="row">
+                  <select name="" id="" class="form-control my-2"></select>
+                </div>
+
+                <div class="container text-start cont-bank-account">
+                  <div class="row">
+                    <div class="col-12"><b>Bank BCA</b></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col">
+                          <p>BANK BRI (002)</p>
+                          <p><b>Account Number </b><br />1999042132523</p>
+                          <p><b>Account Name</b> <br />Calvin Sanjaya</p>
+                        </div>
+                        <div class="col">
+                          <img
+                            src="https://katsudoto.id/media/public/70/14434/book/thumb_md_111115_1665721310_600_600.jpeg"
+                            alt=""
+                            style="width: 100%"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-13 row text-center my-4 mb-5 animated">
+            <div class="col-12">
+              <h3 class="animated section-title" anim="slide-up">
+                Protect Yourself And Other From <br />
+                Covid-19
+              </h3>
+              <div class="container">
+                <div class="container">
+                  <div class="row protocol-container mx-auto">
+                    <div class="col">
+                      <div
+                        class="protocol-card animated"
+                        anim="slide-left"
+                        delay="2"
+                      >
+                        <img src="img/Distancing.svg" alt="" />
+                        <p>SOCIAL DISTANCING</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div
+                        class="protocol-card animated"
+                        anim="slide-right"
+                        delay="2.2"
+                      >
+                        <img src="img/Mask.svg" alt="" />
+                        <p>WEARING A MASK</p>
+                      </div>
+                    </div>
+                    <div class="w-100 mb-3"></div>
+                    <div class="col">
+                      <div
+                        class="protocol-card animated"
+                        anim="slide-left"
+                        delay="2.4"
+                      >
+                        <img src="img/Hand Sanitizer.svg" alt="" />
+                        <p>HAND YOUR HAND</p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div
+                        class="protocol-card animated"
+                        anim="slide-right"
+                        delay="2.6"
+                      >
+                        <img src="img/Temperatur Gun.svg" alt="" />
+                        <p>TEMPERATURE CHECK</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-14 row text-center pb-5 animated">
+            <div class="col-12 p-0">
+              <img
+                src="img/ornament-grid3.png"
+                style="width: 100%; transform: translateY(-50%)"
+                alt=""
+                class="mb-3"
+              />
+              <h3 class="animated section-title" anim="slide-up">
+                Wedding Wish
+              </h3>
+              <div class="p-3 container-fluid">
+                <div class="row mb-3">
+                  <input
+                    type="text"
+                    class="form-control l animated"
+                    anim="slide-up"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="row mb-3">
+                  <textarea
+                    name=""
+                    id=""
+                    cols="30"
+                    rows="10"
+                    class="form-control animated"
+                    anim="slide-up"
+                    placeholder="Give your wish..."
+                  ></textarea>
+                </div>
+                <div class="row mb-3">
+                  <button
+                    type="submit"
+                    class="btn-wish-send animated"
+                    anim="slide-right"
+                  >
+                    Kirim <i class="fa fa-send"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="container-fluid container-chat"
+                style="height: 400 px; overflow-y: scroll"
+              >
+                <div
+                  class="row text-start row-message animated"
+                  anim="slide-up"
+                >
+                  <div class="col-12">
+                    <p class="text-name">Dherawan</p>
+                    <p class="text-date-message">14 Jan 2023, 11:00</p>
+                    <p>
+                      May your marriage be filled with all the right
+                      ingredients: a heap of love, a dash of humor, a touch or
+                      romance and a spoonful of understanding. May your joy last
+                      forever. Congratulation!🕊️
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="row text-start row-message animated"
+                  anim="slide-up"
+                >
+                  <div class="col-12">
+                    <p class="text-name">Dherawan</p>
+                    <p>14 Jan 2023, 11:00</p>
+                    <p>
+                      May your marriage be filled with all the right
+                      ingredients: a heap of love, a dash of humor, a touch or
+                      romance and a spoonful of understanding. May your joy last
+                      forever. Congratulation!🕊️
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="row text-start row-message animated"
+                  anim="slide-up"
+                >
+                  <div class="col-12">
+                    <p>Dherawan</p>
+                    <p>14 Jan 2023, 11:00</p>
+                    <p>
+                      May your marriage be filled with all the right
+                      ingredients: a heap of love, a dash of humor, a touch or
+                      romance and a spoonful of understanding. May your joy last
+                      forever. Congratulation!🕊️
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-15 row text-center animated position-relative">
+            <img
+              src="img/ornament-grid4.png"
+              alt=""
+              style="width: 100%; transform: translateY(-50%)"
+            />
+            <div class="col-12">
+              <h3
+                style="height: 200px; padding-top: 20px; font-size: 40pt"
+                class="animated"
+                anim="slide-up"
+              >
+                Calvin & Angel
+              </h3>
+            </div>
+          </div>
+          <div class="section-16 row text-center">
+            <p class="my-2">Powered by</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function updateCountdown() {
+        const targetDate = new Date("2024-09-26 18:24:00").getTime(); // Change this to your target date
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now;
+
+        if (timeRemaining <= 0) {
+          // The countdown has ended
+          $("#countdown").html(
+            "<div class='timer'><span>00</span><span class='label'>Days</span></div><div class='timer'><span>00</span><span class='label'>Hours</span></div><div class='timer'><span>00</span><span class='label'>Minutes</span></div><div class='timer'><span>00</span><span class='label'>Seconds</span></div>"
+          );
+          return;
+        }
+
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Update the HTML with the remaining time
+        $("#days").text(days.toString().padStart(2, "0"));
+        $("#hours").text(hours.toString().padStart(2, "0"));
+        $("#minutes").text(minutes.toString().padStart(2, "0"));
+        $("#seconds").text(seconds.toString().padStart(2, "0"));
+      }
+
+      // Update the countdown every second
+      setInterval(updateCountdown, 1000);
+
+      // Initial call to set up the countdown
+      updateCountdown();
+    </script>
+
+    <script src="js/anim.js"></script>
+  </body>
+</html>
