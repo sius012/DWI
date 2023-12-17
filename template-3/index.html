@@ -20,6 +20,11 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+    integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK"
+    crossorigin="anonymous"
+  />
     <script
     src="https://code.jquery.com/jquery-3.7.1.js"
     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -469,6 +474,21 @@
         color: white  ;
         transition: .2s;
       }
+
+      
+      .input-rsvp-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .input-rsvp-cont .btn-number {
+        background: rgb(189, 165, 146);
+        height: 40px;
+        width: 40px;
+        border: 0px;
+        border-radius: 50%;
+        color: white
+      }
     </style>
   </head>
   <body>
@@ -477,7 +497,17 @@
         <div class="col-md-7 p-0 position-relative">
           
           <div class="container-cover">
-        
+            <audio controls autoplay class="d-none" id="music-audio">
+              <source src="music/music2.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <img
+              src="img/vinyl.png"
+              alt=""
+              id="disk-player"
+              class="spining"
+              onclick="toggleMusic()"
+            />
             <div anim="fades" class="animated box-shadow position-absolute shadow-gradient" style="width: 100%; height: 100%;z-index: 100;">
              
             </div>
@@ -796,7 +826,28 @@
                 <div class="container">
                   <form action="">
                     <p for="" class="mb-2 text-">Masukan Jumlah orang</p>
-                    <input type="text" class="form-control" />
+                     <div class="input-rsvp-cont">
+                      <button
+                        class="btn-number btn-secondary"
+                        type="button"
+                        data-type="min"
+                      >
+                        <i class="fa fa-subtract"></i>
+                      </button>
+                      <span style="width: 100px; font-size: 30pt">0</span>
+                      <button
+                        class="btn-number btn-secondary"
+                        type="button"
+                        data-type="plus"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </button>
+                      <input
+                        class="form-control hidden-value"
+                        value="0"
+                        type="hidden"
+                      />
+                    </div>
                     <button type="submit" class="btn-submit-rsvp">Kirim</button>
                   </form>
                 </div>
@@ -1090,6 +1141,23 @@
         updateCountdown();
       });
     </script>
+        <script>
+          $(document).ready(function () {
+            $(".btn-number").click(function () {
+        let type = $(this).data("type");
+        let span = $(this).closest(".input-rsvp-cont").find("span");
+        let inp = $(this).closest(".input-rsvp-cont").find(".hidden-value");
+        if (type == "plus") {
+          span.text(parseInt(span.text()) + 1);
+        } else {
+          if (parseInt(span.text()) - 1 > -1) {
+            span.text(parseInt(span.text()) - 1);
+          }
+        }
+        inp.val(span.text());
+      });
+          });
+        </script>
     <script>
                let toggleButton = document.getElementById("disk-player");
          let audio = document.getElementById("music-audio");

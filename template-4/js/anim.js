@@ -59,4 +59,18 @@ $(document).ready(function () {
       inframechecker($(this), i);
     });
   });
+
+  $(".btn-number").click(function () {
+    let type = $(this).data("type");
+    let span = $(this).closest(".input-rsvp-cont").find("span");
+    let inp = $(this).closest(".input-rsvp-cont").find(".hidden-value");
+    if (type == "plus") {
+      span.text(parseInt(span.text()) + 1);
+    } else {
+      if (parseInt(span.text()) - 1 > -1) {
+        span.text(parseInt(span.text()) - 1);
+      }
+    }
+    inp.val(span.text());
+  });
 });

@@ -98,12 +98,15 @@
         color: white;
       }
 
+      .cont-date {
+      }
       .cont-date div {
         background-color: white;
-        margin: 10px;
         border-radius: 20px 0px;
         height: 100px;
         color: black;
+        width: 80%;
+        margin: 3px;
       }
 
       .cont-date div p {
@@ -255,7 +258,8 @@
         font-family: "Viaoda Libre", serif;
       }
 
-      html {
+      html,
+      body {
         overflow-x: hidden;
       }
       .carousel-item img {
@@ -290,6 +294,18 @@
         bottom: 10px;
         width: 50px;
       }
+      .input-rsvp-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .input-rsvp-cont .btn-number {
+        height: 40px;
+        width: 40px;
+        border: 0px;
+        border-radius: 50%;
+        color: rgb(80, 18, 18);
+      }
     </style>
   </head>
   <body>
@@ -298,6 +314,7 @@
         <div
           class="col-md-7 p-0 position-relative"
           style="background-color: whitesmoke"
+          style="height: 100vh"
         >
           <div class="container-cover p-0">
             <div class="music-cont">
@@ -339,7 +356,7 @@
         </div>
         <div class="col-md-5 container-content mb-3">
           <div class="section-1 row text-center animated">
-            <div class="col-12">
+            <div class="col-12 p-0">
               <img
                 src="img/ornament-grid.png"
                 alt=""
@@ -373,20 +390,22 @@
               <p>January 28th, 2023</p>
             </div>
           </div>
-          <div class="section-2 row text-center mt-2 animated">
-            <img
-              src="img/ornament-grid.png"
-              alt=""
-              style="width: 100%; transform: translateY(-25px)"
-              class="my-5"
-            />
-            <h3 class="two-text animated" anim="slide-up">The Wedding of</h3>
-            <p class="animated" anim="slide-down">
-              The pleasure of your company is requested at the marriage of
-            </p>
+          <div class="section-2 row text-center mt-2 p-0 animated">
+            <div class="col-12 p-0">
+              <img
+                src="img/ornament-grid.png"
+                alt=""
+                style="width: 100%; transform: translateY(-25px)"
+                class="my-5"
+              />
+              <h3 class="two-text animated" anim="slide-up">The Wedding of</h3>
+              <p class="animated" anim="slide-down">
+                The pleasure of your company is requested at the marriage of
+              </p>
+            </div>
           </div>
           <div class="section-3 row text-center animated">
-            <div class="col-12">
+            <div class="col-12 p-0">
               <div
                 class="couple-img my-5 mx-auto d-flex animated"
                 anim="slide-left"
@@ -419,18 +438,19 @@
               </div>
             </div>
           </div>
-          <div class="section-5 row text-center my-5 animated pt-5">
+          <div class="padder mt-5" style="margin-bottom: 100px"></div>
+          <div class="section-5 row text-center animated">
             <div class="col-12 position-relative p-0">
               <img
                 src="img/ornament-grid2.png"
                 alt=""
-                style="width: 100%; transform: translateY(-90%)"
+                style="width: 100%; transform: translateY(-100%)"
                 class=""
               />
               <h3 class="std-text">Save The Date</h3>
               <p>January 28th, 2023</p>
-              <div class="container">
-                <div class="row cont-date mx-auto">
+              <div class="container-bottom mx-auto" style="width: 90%">
+                <div class="row cont-date flex-nowrap p-3">
                   <div class="col animated" anim="slide-up">
                     <p id="days">0</p>
                     <span>Days</span>
@@ -458,8 +478,9 @@
             </div>
           </div>
           <div class="section-6 row text-center animated">
+            <div class="padder my-5"></div>
             <div class="col 12">
-              <h3 class="os-text section-title">Our Story</h3>
+              <h3 class="os-text section-title mb-5">Our Story</h3>
               <div class="row animated" anim="slide-left">
                 <div class="col-6" style="height: 300px">
                   <img
@@ -499,16 +520,17 @@
             </div>
           </div>
           <div class="section-7 row text-center animated">
-            <img
-              src="img/ornament-grid2.png"
-              class="my-5 mb-5 animated"
-              anim="slide-down"
-              alt=""
-            />
-            <div class="col-12">
+            <div class="col-12 p-0">
+              <img
+                src="img/ornament-grid2.png"
+                class="my-5 mb-5 animated"
+                anim="slide-down"
+                alt=""
+                style="width: 100%"
+              />
               <h3 class="section-title">Prewedding</h3>
               <video
-                style="width: 80%"
+                style="width: 80%; border-radius: 10px"
                 controls
                 class="animated"
                 anim="slide-up"
@@ -588,7 +610,8 @@
               </div>
             </div>
           </div>
-          <div class="section-9 row text-center my-5 animated">
+          <div class="padder my-5"></div>
+          <div class="section-9 row text-center animated">
             <div class="col-12 p-0">
               <img
                 src="img/ornament-grid2.png"
@@ -701,6 +724,7 @@
               />
             </div>
           </div>
+          <div class="padder my-5"></div>
           <div class="section-9c row text-center">
             <div class="col-md-12">
               <div class="container-fluid my-5 container-rsvp p-3">
@@ -708,7 +732,29 @@
                 <div class="container">
                   <form action="">
                     <p for="" class="mb-2 text-">Masukan Jumlah orang</p>
-                    <input type="text" class="form-control" />
+                    <div class="input-rsvp-cont">
+                      <button
+                        class="btn-number btn-secondary"
+                        type="button"
+                        data-type="min"
+                      >
+                        <i class="fa fa-subtract"></i>
+                      </button>
+                      <span style="width: 100px; font-size: 30pt">0</span>
+                      <button
+                        class="btn-number btn-secondary"
+                        type="button"
+                        data-type="plus"
+                      >
+                        <i class="fa fa-plus"></i>
+                      </button>
+                      <input
+                        class="form-control hidden-value"
+                        value="0"
+                        type="hidden"
+                      />
+                    </div>
+
                     <button type="submit" class="btn-submit-rsvp">Kirim</button>
                   </form>
                 </div>
@@ -822,12 +868,12 @@
                     <div class="w-100 mb-3"></div>
                     <div class="col">
                       <div
-                        class="protocol-card animated"
+                        class="protocol-card animated p-4"
                         anim="slide-left"
                         delay="2.4"
                       >
                         <img src="img/Hand Sanitizer.svg" alt="" />
-                        <p>HAND YOUR HAND</p>
+                        <p>WASH YOUR HAND</p>
                       </div>
                     </div>
                     <div class="col">
@@ -856,7 +902,7 @@
               <h3 class="animated section-title" anim="slide-up">
                 Wedding Wish
               </h3>
-              <div class="p-3 container-fluid">
+              <div class="p-5 container-fluid">
                 <div class="row mb-3">
                   <input
                     type="text"
@@ -925,7 +971,22 @@
                   anim="slide-up"
                 >
                   <div class="col-12">
-                    <p>Dherawan</p>
+                    <p class="text-name">Dherawan</p>
+                    <p>14 Jan 2023, 11:00</p>
+                    <p>
+                      May your marriage be filled with all the right
+                      ingredients: a heap of love, a dash of humor, a touch or
+                      romance and a spoonful of understanding. May your joy last
+                      forever. Congratulation!🕊️
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="row text-start row-message animated"
+                  anim="slide-up"
+                >
+                  <div class="col-12">
+                    <p class="text-name">Dherawan</p>
                     <p>14 Jan 2023, 11:00</p>
                     <p>
                       May your marriage be filled with all the right
@@ -939,12 +1000,12 @@
             </div>
           </div>
           <div class="section-15 row text-center animated position-relative">
-            <img
-              src="img/ornament-grid4.png"
-              alt=""
-              style="width: 100%; transform: translateY(-50%)"
-            />
-            <div class="col-12">
+            <div class="col-12 p-0">
+              <img
+                src="img/ornament-grid4.png"
+                alt=""
+                style="width: 100%; transform: translateY(-50%)"
+              />
               <h3
                 style="height: 200px; padding-top: 20px; font-size: 40pt"
                 class="animated"
